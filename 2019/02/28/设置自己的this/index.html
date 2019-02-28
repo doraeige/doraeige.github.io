@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="welcome!">
 <meta property="og:description" content="我们知道 根据函数的调用方式 this 会设成不同的值，Javascript 提供了几种设置 this值的方法:  call() apply() bind()   call 和 apply 作为方法在函数上被调用，会因为参数的传入方式不同而有所不同，bind 是返回新函数的方法，  call call() 是一个直接调用到函数上的方法。我们传递给它一个单一的值，以设置为 this 的值，然后逐个传">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T11:19:17.602Z">
+<meta property="og:updated_time" content="2019-02-28T11:24:31.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置自己的this">
 <meta name="twitter:description" content="我们知道 根据函数的调用方式 this 会设成不同的值，Javascript 提供了几种设置 this值的方法:  call() apply() bind()   call 和 apply 作为方法在函数上被调用，会因为参数的传入方式不同而有所不同，bind 是返回新函数的方法，  call call() 是一个直接调用到函数上的方法。我们传递给它一个单一的值，以设置为 this 的值，然后逐个传">
@@ -561,7 +561,7 @@ function sayHello(message) {
     console.log(`${message}, ${this.name}. You&apos;re looking well today.`);
 }
 </code></pre><p>假设你想将消息 <code>&#39;Hello, Dave. You&#39;re looking well today.&#39;</code> 输出到控制台。你应该编写哪个表达式来达到这个目的？</p>
-<p><strong>答案：</strong> sayHello.apply(dave, [‘Hello’]);</p>
+<p><strong>参考答案：</strong> sayHello.apply(dave, [‘Hello’]);</p>
 <blockquote>
 <p>请考虑以下 Andrew 和 Richard 对象：</p>
 </blockquote>
@@ -580,18 +580,27 @@ const Richard = {
     }
 };
 </code></pre><p>当 <code>Richard.introduce.call(Andrew)</code>; 被执行时，什么会被记录到控制台？</p>
-<p><strong>答案：</strong> <code>&#39;Hello there! I&#39;m Andrew.&#39;</code></p>
+<p><strong>参考答案：</strong> <code>&#39;Hello there! I&#39;m Andrew.&#39;</code></p>
 <blockquote>
-<p>请考虑以下代码：<br>    const andrew = {<br>        name: ‘Andrew’<br>    };</p>
+<p>请考虑以下代码：</p>
 </blockquote>
-<pre><code>function introduce(language) {
+<pre><code>const andrew = {
+    name: &apos;Andrew&apos;
+};
+
+function introduce(language) {
     console.log(`I&apos;m ${this.name} and my favorite programming language is ${language}.`);
 }
 </code></pre><p>请编写一个表达式，使用 call() 方法产生以下消息：<br><code>&#39;I&#39;m Andrew and my favorite programming language is JavaScript.&#39;</code></p>
-<p><strong>答案：</strong> <code>introduce.call(andrew,&#39;JavaScript&#39;)</code></p>
+<p><strong>参考答案：</strong> <code>introduce.call(andrew,&#39;JavaScript&#39;)</code></p>
 <h2 id="回调和-this"><a href="#回调和-this" class="headerlink" title="回调和 this"></a>回调和 <code>this</code></h2><hr>
-<p>当涉及到回调函数时，this 的值有一些潜在的作用域问题，事情会变得比较棘手。接下来，让我们来看看这个问题。<br>    function invokeTwice(cb) {<br>        cb();<br>        cb();<br>    }</p>
-<pre><code>const dog = {
+<p>当涉及到回调函数时，this 的值有一些潜在的作用域问题，事情会变得比较棘手。接下来，让我们来看看这个问题。</p>
+<pre><code>function invokeTwice(cb) {
+    cb();
+    cb();
+}
+
+const dog = {
     age: 5,
     growOneYear: function () {
         this.age += 1;

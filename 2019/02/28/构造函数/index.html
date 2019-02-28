@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="welcome!">
 <meta property="og:description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T09:58:44.290Z">
+<meta property="og:updated_time" content="2019-02-28T11:27:43.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构造函数">
 <meta name="twitter:description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
@@ -479,7 +479,7 @@
 </ul>
 <h1 id="构造函数：结构和语法"><a href="#构造函数：结构和语法" class="headerlink" title="构造函数：结构和语法"></a>构造函数：结构和语法</h1><hr>
 <pre><code>function SoftwareDeveloper() {
-this.favoriteLanguage = &apos;JavaScript&apos;;
+    this.favoriteLanguage = &apos;JavaScript&apos;;
 }
 </code></pre><p>首先，构造函数并不声明局部变量，而是使用 <code>this</code> 关键字来保存数据。以上函数将为所创建的任何对象添加一个 <code>favoriteLanguage</code> 属性，并为其分配一个默认值 ‘JavaScript’。现在不用太在意构造函数中的 <code>this</code>；只要知道 <code>this</code> 是指在构造函数前面使用 <code>new</code> 关键字创建的新对象即可。我们很快就会详细介绍这个 <code>this</code>！<br>最后一点比较特别的是，这个函数似乎不会返回任何东西！<code>JavaScript</code> 中的构造函数不应该有一个显式的返回值（即使用 <code>return</code> 语句）。</p>
 <h2 id="创建一个新的对象"><a href="#创建一个新的对象" class="headerlink" title="创建一个新的对象"></a>创建一个新的对象</h2><hr>
@@ -489,6 +489,7 @@ this.favoriteLanguage = &apos;JavaScript&apos;;
 <pre><code>console.log(developer); // SoftwareDeveloper {favoriteLanguage: &quot;JavaScript&quot;}
 </code></pre><p>用对象字面量的方式来创建对象，看看有何不同</p>
 <pre><code>let orderDeveloper = { favoriteLanguage: &apos;JavaScript&apos; };
+
 otherDeveloper; // { favoriteLanguage: &quot;JavaScript&quot; }
 </code></pre><p>可以看出 与 <code>developer</code> 相比，创建对象的构造函数 <code>SoftwareDeveloper</code> 没有列在Chrome 开发者工具中；<br>在 Chrome 开发者工具中 构造函数通常显示在 {} 前面；<br><code>developer</code> 的构造函数是 <code>SoftwareDeveloper</code>，而 <code>orderDeveloper</code> 的构造函数是 <code>object</code> 构造函数；比较之下，两者原型将有所不同。</p>
 <h2 id="构造函数可以有参数"><a href="#构造函数可以有参数" class="headerlink" title="构造函数可以有参数"></a>构造函数可以有参数</h2><hr>
@@ -499,19 +500,22 @@ otherDeveloper; // { favoriteLanguage: &quot;JavaScript&quot; }
 }
 </code></pre><p>在更新的 <code>SoftwareDeveloper()</code> 函数中，无论传入函数的值是什么，它都将是对象的 <code>name</code> 属性的值。让我们来看看：</p>
 <pre><code>let instructor = new SoftwareDeveloper(&apos;Andrew&apos;);
+
 console.log(instructor);
+
 // SoftwareDeveloper { favoriteLanguage: &apos;JavaScript&apos;, name: &apos;Andrew&apos; }
 </code></pre><p>正如我们在上面看到的，我们可以使用相同的构造函数来创建不同的对象：</p>
 <pre><code>let teacher = new SoftwareDeveloper(&apos;Richard&apos;);
 
 console.log(teacher);
+
 // SoftwareDeveloper { favoriteLanguage: &apos;JavaScript&apos;, name: &apos;Richard&apos; }
 </code></pre><p>构造函数的好处是，我们可以调用相同的构造函数，创建无数个实例或对象。</p>
 <h2 id="省略-new-运算符"><a href="#省略-new-运算符" class="headerlink" title="省略 new 运算符"></a>省略 new 运算符</h2><hr>
-<p>如果你无意中 _没有_ 使用 <code>new</code> 运算符来调用构造函数，会发生什么？</p>
+<p>如果你无意中 <strong>没有</strong> 使用 <code>new</code> 运算符来调用构造函数，会发生什么？</p>
 <pre><code>function SoftwareDeveloper(name) {
-this.favoriteLanguage = &apos;JavaScript&apos;;
-this.name = name;
+    this.favoriteLanguage = &apos;JavaScript&apos;;
+    this.name = name;
 }
 
 let coder = SoftwareDeveloper(&apos;David&apos;);
@@ -526,7 +530,9 @@ console.log(coder);
   this.name = name;
 }
 const dev = new Developer(&apos;Veronkia&apos;);
+
 typeof dev;  // &quot;object&quot;
+
 dev instanceof Developer;  // true
 </code></pre><h3 id="instanceof-和原型链"><a href="#instanceof-和原型链" class="headerlink" title="instanceof 和原型链"></a>instanceof 和原型链</h3><hr>
 <p>在以上示例中，<code>instanceof</code> 确认一个特定的构造函数确实创建了一个特定的对象。我们知道这一点，是因为我们在调用 <code>Developer()</code> 构造函数之后直接实例化了 <code>dev</code> 对象。</p>

@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="welcome!">
 <meta property="og:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T09:58:06.472Z">
+<meta property="og:updated_time" content="2019-02-28T11:25:47.072Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 的 this 用法">
 <meta name="twitter:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
@@ -560,24 +560,38 @@ funFunction();
 <p>如果使用 <code>new</code> 运算符来调用构造函数，<code>this</code> 的值将被设置为新创建的对象，如果在对象上调用方法，<code>this</code> 将被设置为该对象本身，如果简单地调用一个函数，<code>this</code> 将被设置为全局对象: <code>window</code></p>
 </blockquote>
 <h3 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h3><blockquote>
-<p>请考虑以下构造函数 <code>City</code>：<br>    function City(name, population) {<br>        this.name = name;<br>        this.population = population;</p>
+<p>请考虑以下构造函数 <code>City</code>：</p>
 </blockquote>
-<pre><code>    this.identify = function () {
+<pre><code>function City(name, population) {
+    this.name = name;
+    this.population = population;
+
+    this.identify = function () {
         console.log(`${this.name}&apos;s population is ${this.population}.`);
     };
 }    
 </code></pre><p>当 <code>const sanFrancisco = new City(&#39;San Francisco&#39;, 870000)</code>; 被执行时，<code>this</code> 的值是什么？</p>
 <p><strong>答案：</strong> 新创建的对象，被 <code>sanFrancisco</code> 引用</p>
 <blockquote>
-<p>请考虑以下对象 <code>building</code>：<br>        const building = {<br>            floors: 5,<br>            addFloor: function () {<br>                this.floors += 1;<br>            }<br>            };</p>
+<p>请考虑以下对象 <code>building</code>：</p>
 </blockquote>
-<pre><code>building.addFloor();
+<pre><code>const building = {
+    floors: 5,
+    addFloor: function () {
+        this.floors += 1;
+    }
+    };
+
+building.addFloor();
 </code></pre><p>当 <code>building.addFloor()</code> 被执行时，<code>this</code> 的值是什么？</p>
 <p><strong>答案：</strong> <code>building</code></p>
 <blockquote>
-<p>当以下函数被调用时，this 的值是多少？<br>        function myFunction() {<br>            console.log(“What is the value of ‘this’?”);<br>        }</p>
+<p>当以下函数被调用时，this 的值是多少？</p>
 </blockquote>
-<p><strong>答案：</strong> <code>window</code></p>
+<pre><code>function myFunction() {
+    console.log(&quot;What is the value of &apos;this&apos;?&quot;);
+}
+</code></pre><p><strong>答案：</strong> <code>window</code></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><hr>
 <p>函数、对象和 <code>this</code> 彼此相互关联。当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 变量会被设置为新创建的对象。当在对象上调用方法时，<code>this</code> 会被设置为该对象本身。当在浏览器环境中调用函数时，<code>this</code> 会被设置为 <code>window</code>，也被称为全局对象。</p>
 <p>除此之外，还有一组方式可以调用函数：使用 <code>apply()</code> 和使用 <code>call()</code>。这两种方式有许多相似之处，每一种方式都允许我们指定如何设置 <code>this</code>。接下来，我们会对它们进行详细分析！</p>
