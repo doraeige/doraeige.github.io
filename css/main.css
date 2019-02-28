@@ -1221,7 +1221,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: 'Source Code Pro, monospace, "PingFang SC", "Microsoft YaHei", sans-serif', 'Monda, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto Slab, "PingFang SC", "Microsoft YaHei", sans-serif', 'Monda, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1499,7 +1499,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Source Code Pro, monospace, "PingFang SC", "Microsoft YaHei", sans-serif', 'Monda, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto Slab, "PingFang SC", "Microsoft YaHei", sans-serif', 'Monda, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #deff90;
+  background: #d6a14d;
 }
 .links-of-blogroll {
   font-size: 13px;
