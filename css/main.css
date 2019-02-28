@@ -1133,7 +1133,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 24px;
   font-weight: normal;
-  font-family: 'Lobster Two, "PingFang SC", "Microsoft YaHei", sans-serif', 'Monda, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Monda, Lobster Two, "PingFang SC", "Microsoft YaHei", sans-serif', 'Monda, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #417799;
+  background: #0853ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2926,6 +2926,9 @@ hr {
 }
 .site-title {
   font-family: 'Monda, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.sidebar-inner {
+  font-family: Roboto Slab, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .post {
   margin-top: 60px;
