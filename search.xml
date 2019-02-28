@@ -4,6 +4,12 @@
     <title><![CDATA[设置自己的this]]></title>
     <url>%2F2019%2F02%2F28%2F%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84this%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>this</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Javascript 的 this 用法]]></title>

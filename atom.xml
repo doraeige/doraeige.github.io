@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-28T10:10:35.654Z</updated>
+  <updated>2019-02-28T10:11:14.469Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,16 @@
     <link href="http://yoursite.com/2019/02/28/%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84this/"/>
     <id>http://yoursite.com/2019/02/28/设置自己的this/</id>
     <published>2019-02-28T10:10:35.000Z</published>
-    <updated>2019-02-28T10:10:35.654Z</updated>
+    <updated>2019-02-28T10:11:14.469Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+    
+    
+      <category term="this" scheme="http://yoursite.com/tags/this/"/>
     
   </entry>
   
