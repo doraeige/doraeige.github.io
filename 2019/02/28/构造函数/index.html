@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Constructor,Object,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="技术和生活，融为一体">
-<meta name="keywords" content="前端程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="welcome!">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta name="description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
+<meta name="keywords" content="Constructor,Object">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构造函数">
+<meta property="og:url" content="http://yoursite.com/2019/02/28/构造函数/index.html">
 <meta property="og:site_name" content="welcome!">
-<meta property="og:description" content="技术和生活，融为一体">
+<meta property="og:description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-28T04:50:58.936Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="welcome!">
-<meta name="twitter:description" content="技术和生活，融为一体">
+<meta name="twitter:title" content="构造函数">
+<meta name="twitter:description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/28/构造函数/">
 
 
 
 
 
-  <title>归档 | welcome!</title>
+  <title>构造函数 | welcome!</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/doraeige"><img style="position:absolute;top:0;right:0;border:0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
@@ -282,107 +283,211 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 2 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/构造函数/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoyaliu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://k2.jsqq.net/uploads/allimg/1711/17_171109094835_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="welcome!">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/02/28/构造函数/" itemprop="url">
-              
-                <span itemprop="name">构造函数</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">构造函数</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-28T11:22:12+08:00" content="2019-02-28">
-          02-28
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-28T11:22:12+08:00">
+                2019-02-28
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/26/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T19:41:00+08:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，<br>与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，<br>然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。</p>
+<ul>
+<li>要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：<br>new SoftwareDeveloper();</li>
+</ul>
+<h1 id="构造函数：结构和语法"><a href="#构造函数：结构和语法" class="headerlink" title="构造函数：结构和语法"></a>构造函数：结构和语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function SoftwareDeveloper() &#123;</span><br><span class="line"> this.favoriteLanguage = &apos;JavaScript&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先，构造函数并不声明局部变量，而是使用 this 关键字来保存数据。以上函数将为所创建的任何对象添加一个 favoriteLanguage 属性，并为其分配一个默认值 ‘JavaScript’。现在不用太在意构造函数中的 this；只要知道 this 是指在构造函数前面使用 new 关键字创建的新对象即可。我们很快就会详细介绍这个 this！<br>最后一点比较特别的是，这个函数似乎不会返回任何东西！JavaScript 中的构造函数不应该有一个显式的返回值（即使用 return 语句）。</p>
+<h2 id="创建一个新的对象"><a href="#创建一个新的对象" class="headerlink" title="创建一个新的对象"></a>创建一个新的对象</h2><p>正如我们在上面看到的，让我们使用 new 运算符来创建一个新的对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let developer = new SoftwareDeveloper();</span><br></pre></td></tr></table></figure>
+<p>我们已经把这个调用的返回值保存到了变量 developer 中。让我们执行 console.log(developer); 将这个 SoftwareDeveloper 对象记录到控制台：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(developer); // SoftwareDeveloper &#123;favoriteLanguage: &quot;JavaScript&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>用对象字面量的方式来创建对象，看看有何不同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let orderDeveloper = &#123; favoriteLanguage: &apos;JavaScript&apos; &#125;;</span><br><span class="line">otherDeveloper; // &#123; favoriteLanguage: &quot;JavaScript&quot; &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出 与 developer 相比，创建对象的构造函数 SoftwareDeveloper 没有列在Chrome 开发者工具中；<br>在 Chrome 开发者工具中 构造函数通常显示在 {} 前面；<br>developer 的构造函数是 SoftwareDeveloper，而 orderDeveloper 的构造函数是 object 构造函数；比较之下，两者原型将有所不同。</p>
+<h2 id="构造函数可以有参数"><a href="#构造函数可以有参数" class="headerlink" title="构造函数可以有参数"></a>构造函数可以有参数</h2><p>与常规函数一样，使用构造函数的一个好处是它们也可以接受参数。让我们更新以上构造函数来接受一个参数，并为其分配 name 属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function SoftwareDeveloper(name) &#123;</span><br><span class="line">  this.favoriteLanguage = &apos;JavaScript&apos;;</span><br><span class="line">  this.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在更新的 SoftwareDeveloper() 函数中，无论传入函数的值是什么，它都将是对象的 name 属性的值。让我们来看看：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let instructor = new SoftwareDeveloper(&apos;Andrew&apos;);</span><br><span class="line">console.log(instructor);</span><br><span class="line">// SoftwareDeveloper &#123; favoriteLanguage: &apos;JavaScript&apos;, name: &apos;Andrew&apos; &#125;</span><br></pre></td></tr></table></figure>
+<p>正如我们在上面看到的，我们可以使用相同的构造函数来创建不同的对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let teacher = new SoftwareDeveloper(&apos;Richard&apos;);</span><br><span class="line"></span><br><span class="line">console.log(teacher);</span><br><span class="line">// SoftwareDeveloper &#123; favoriteLanguage: &apos;JavaScript&apos;, name: &apos;Richard&apos; &#125;</span><br></pre></td></tr></table></figure>
+<p>构造函数的好处是，我们可以调用相同的构造函数，创建无数个实例或对象。</p>
+<h2 id="省略-new-运算符"><a href="#省略-new-运算符" class="headerlink" title="省略 new 运算符"></a>省略 new 运算符</h2><p>如果你无意中_没有_ 使用 new 运算符来调用构造函数，会发生什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function SoftwareDeveloper(name) &#123;</span><br><span class="line"> this.favoriteLanguage = &apos;JavaScript&apos;;</span><br><span class="line"> this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let coder = SoftwareDeveloper(&apos;David&apos;);</span><br><span class="line"></span><br><span class="line">console.log(coder);</span><br><span class="line">// undefined</span><br></pre></td></tr></table></figure>
+<p>这是怎么回事？如果不使用 new 运算符，则不会创建对象。该函数会像任何其他常规函数一样被调用。由于该函数不会 _返回_ 任何东西（除了所有函数都会默认返回的 undefined 之外），因此 coder 变量最终会被分配给 undefined。</p>
+<p>还有一点需要注意：由于这个函数作为一个常规函数被调用，因此 this 的值也会截然不同。现在不用太在意这一点，我们将在下一部分深入探讨 this 关键字！</p>
+<h2 id="查看对象的构造函数-instanceof"><a href="#查看对象的构造函数-instanceof" class="headerlink" title="查看对象的构造函数(instanceof)"></a>查看对象的构造函数(instanceof)</h2><p>如果我们想查看某个对象是否是用构造函数创建的呢？我们可以使用 instanceof（它会返回一个布尔值）来窥见一些端倪。让我们来看看吧！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Developer(name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">const dev = new Developer(&apos;Veronkia&apos;);</span><br><span class="line">typeof dev;  // &quot;object&quot;</span><br><span class="line">dev instanceof Developer;  // true</span><br></pre></td></tr></table></figure>
+<h3 id="instanceof-和原型链"><a href="#instanceof-和原型链" class="headerlink" title="instanceof 和原型链"></a>instanceof 和原型链</h3><p>在以上示例中，instanceof 确认一个特定的构造函数确实创建了一个特定的对象。我们知道这一点，是因为我们在调用 Developer() 构造函数之后直接实例化了 dev 对象。</p>
+<p>然而，很多时候并没有这么简单：instanceof 运算符实际上会测试构造函数是否出现在某个对象的原型链中。这意味着，虽然我们不是总能检查到底是 <em>哪个构造函数</em> 创建了该对象，但是它使我们能够洞察某个对象可能访问哪些其他的属性和方法。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>JavaScript 的类系统是直接使用函数和对象来构建的。使用 new 运算符来调用构造函数可以实例化一个新的对象。相同的构造函数可以用于创建不同的对象。</p>
+<p>我们在整个课程中广泛讨论了函数、对象和 this。事实证明，这三者是密切相关的！ 我们将在下一部分深入探讨 this 关键字，并仔细分析这三者之间的关系。</p>
+
+      
     </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Constructor/" rel="tag"><i class="fa fa-tag"></i> Constructor</a>
+          
+            <a href="/tags/Object/" rel="tag"><i class="fa fa-tag"></i> Object</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/26/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -390,6 +495,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -412,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -485,6 +603,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数：结构和语法"><span class="nav-number">1.</span> <span class="nav-text">构造函数：结构和语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个新的对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建一个新的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数可以有参数"><span class="nav-number">1.2.</span> <span class="nav-text">构造函数可以有参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#省略-new-运算符"><span class="nav-number">1.3.</span> <span class="nav-text">省略 new 运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看对象的构造函数-instanceof"><span class="nav-number">1.4.</span> <span class="nav-text">查看对象的构造函数(instanceof)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof-和原型链"><span class="nav-number">1.4.1.</span> <span class="nav-text">instanceof 和原型链</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -632,6 +766,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
