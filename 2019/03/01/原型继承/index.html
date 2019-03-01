@@ -144,7 +144,8 @@
 <meta property="og:description" content="原型、原型链  JavaScript 常被描述为一种基于原型的语言 (prototype-based language)。每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。  准确地说，这些属性和方法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/prototype.png">
-<meta property="og:updated_time" content="2019-03-01T16:04:56.251Z">
+<meta property="og:image" content="http://yoursite.com/images/prototype1.png">
+<meta property="og:updated_time" content="2019-03-01T16:36:01.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型继承">
 <meta name="twitter:description" content="原型、原型链  JavaScript 常被描述为一种基于原型的语言 (prototype-based language)。每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。  准确地说，这些属性和方法">
@@ -438,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.5k
+                  3.6k
                 </span>
               
 
@@ -719,7 +720,16 @@ console.log(rodent.constructor);
 </code></pre><p><strong>参考答案：</strong> 对 <code>Object()</code> 原型的引用</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr>
 <p>JavaScript 中的继承是指一个对象基于另一个对象。继承让我们可以重用现有的代码，使对象具有其他对象的属性。</p>
-<p>当使用 new 运算符将一个函数作为构造函数来调用时，该函数会创建并返回一个新的对象。这个对象会被秘密链接到其构造函数的 prototype，而它只是另一个对象。使用这个秘密链接，可以让一个对象访问原型的属性和方法，就像是它自己的一样。如果 JavaScript 没有在某个对象中找到一个特定属性，它将在原型链上继续查找。如有必要，它会一路查找到 Object()（顶级父对象）。</p>
+<p>当使用 new 运算符将一个函数作为构造函数来调用时，该函数会创建并返回一个新的对象。这个对象会被秘密链接到其构造函数的 <code>prototype</code>，而它只是另一个对象。使用这个秘密链接，可以让一个对象访问原型的属性和方法，就像是它自己的一样。如果 JavaScript 没有在某个对象中找到一个特定属性，它将在原型链上继续查找。如有必要，它会一路查找到 <code>Object()</code>（顶级父对象）。</p>
+<ul>
+<li>对象如何查看对象的构造函数 –&gt; <code>obj.constructor</code> 属性</li>
+<li>对象如何查看原型 –&gt; 隐式属性 <code>__proto__</code></li>
+<li>修改原型 –&gt; <code>obj.prototype.xxx = xxx</code></li>
+<li>(原型链的终端)绝大多数对象的最终原型: <code>Object.prototype</code></li>
+</ul>
+<p>为了更理解 原型 / 构造函数 / 实例 三者的关系，请看下面这张图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">实例.__proto__ === 原型</span><br><span class="line">构造函数.prototype === 原型</span><br><span class="line">原型.constructorr === 构造函数</span><br></pre></td></tr></table></figure>
+<p><img src="/images/prototype1.png" alt="原型 / 构造函数 / 实例"></p>
 <p>此外，我们还介绍了几个方法和属性，可以用于检查对象及其原型的来源和引用，即：</p>
 <ul>
 <li>hasOwnProperty()</li>
@@ -1040,7 +1050,7 @@ console.log(rodent.constructor);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.6k</span>
+    <span title="Site words total count">15.7k</span>
   
 </div>
 
