@@ -144,7 +144,7 @@
 <meta property="og:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/prototype.png">
-<meta property="og:updated_time" content="2019-03-01T16:10:38.626Z">
+<meta property="og:updated_time" content="2019-03-01T16:12:31.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型继承:子类">
 <meta name="twitter:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
@@ -532,9 +532,11 @@ console.log(snowball.diet);
 <hr>
 <p>首先，会有跨浏览器的兼容性问题。<br>更重要的是：由于 JavaScript 引擎会在原型链上搜索和访问属性，因此更改对象的原型可能会导致性能问题。<br>有关 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto" target="_blank" rel="noopener">proto</a> 的 MDN 文章甚至警告，不要在页面顶部的红色文本中使用此属性！</p>
 <p>我们有必要知道这个秘密链接，以了解函数和对象是如何相互关联的，但你不应该使用 <code>__proto__</code> 来管理继承。如果你只是需要查看对象的原型，则仍然可以使用 <code>Object.getPrototypeOf()</code> 来达到目的。</p>
+<hr>
 <blockquote>
 <p><strong>如果只继承原型呢？</strong></p>
 </blockquote>
+<hr>
 <blockquote>
 <p>假设我们希望一个 <code>Child</code> 对象从一个 <code>Parent</code> 对象继承。为什么不应该只设置 <code>Child.prototype = Parent.prototype</code> 呢？</p>
 </blockquote>
