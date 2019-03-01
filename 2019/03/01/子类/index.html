@@ -144,7 +144,7 @@
 <meta property="og:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/prototype.png">
-<meta property="og:updated_time" content="2019-03-01T15:49:12.244Z">
+<meta property="og:updated_time" content="2019-03-01T15:56:02.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型继承:子类">
 <meta name="twitter:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
@@ -515,7 +515,7 @@ snowball.favoriteDrink = &apos;cola&apos;;
 console.log(snowball.diet);
 //&apos;carnivore&apos;
 </code></pre><p>由于 claw 和 diet 都作为 <code>prototype</code> 对象中的属性存在，因此它们会被查找，因为对象被秘密链接到其构造函数的 <code>prototype</code> 属性。</p>
-<p>太棒了！但你可能会想：这个通向 <code>prototype</code> 对象的秘密链接到底是 _什么_ 呢？当从 <code>PolarBear()</code> 构造函数构造对象之后（如 <code>snowball</code>），这些对象可以立即访问 <code>PolarBear()</code> 的原型中的属性。这究竟是怎么做到的呢？</p>
+<p>太棒了！但你可能会想：这个通向 <code>prototype</code> 对象的秘密链接到底是_什么_呢？当从 <code>PolarBear()</code> 构造函数构造对象之后（如 <code>snowball</code>），这些对象可以立即访问 <code>PolarBear()</code> 的原型中的属性。这究竟是怎么做到的呢？</p>
 <p>事实证明，这个秘密链接是 <code>snowball</code> 的 <code>__proto__</code> 属性（注意每一端有两个下划线）。</p>
 <p><code>__proto__</code> 是构造函数所创建的所有对象（即实例）的一个属性，并直接指向该构造函数的 <code>prototype</code> 对象。让我们来看看它是什么样的！</p>
 <pre><code>console.log(snowball.__proto__);
@@ -525,18 +525,19 @@ console.log(snowball.diet);
 <pre><code>console.log(snowball.__proto__ === bear);
 
 //true
-</code></pre><p><strong>强烈推荐不要重新分配 <strong>proto</strong> 属性，甚至不要在你编写的任何代码中使用它。</strong></p>
+</code></pre><blockquote>
+<p><strong>强烈建议不要重新分配 <strong>proto</strong> 属性，甚至不要在你编写的任何代码中使用它。</strong></p>
+</blockquote>
 <p>首先，会有跨浏览器的兼容性问题。<br>更重要的是：由于 JavaScript 引擎会在原型链上搜索和访问属性，因此更改对象的原型可能会导致性能问题。<br>有关 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto" target="_blank" rel="noopener">proto</a> 的 MDN 文章甚至警告，不要在页面顶部的红色文本中使用此属性！</p>
 <p>我们有必要知道这个秘密链接，以了解函数和对象是如何相互关联的，但你不应该使用 <code>__proto__</code> 来管理继承。如果你只是需要查看对象的原型，则仍然可以使用 <code>Object.getPrototypeOf()</code> 来达到目的。</p>
 <blockquote>
-<p>如果只继承原型呢？</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>假设我们希望一个 Child 对象从一个 Parent 对象继承。为什么不应该只设置 Child.prototype = Parent.prototype 呢？</p>
+<p><strong>如果只继承原型呢？</strong></p>
 </blockquote>
 <blockquote>
-<p>首先，还记得吗，对象是通过<em>引用来传递的。这意味着，由于 Child.prototype 对象和 Parent.prototype 对象引用的是同一个对象</em>，因此你对 Child 的原型所作的任何更改也会被应用于 Parent 的原型！我们可不希望子对象能够修改其父对象的属性！</p>
+<p>假设我们希望一个 <code>Child</code> 对象从一个 <code>Parent</code> 对象继承。为什么不应该只设置 <code>Child.prototype = Parent.prototype</code> 呢？</p>
+</blockquote>
+<blockquote>
+<p>首先，还记得吗，对象是通过<em>引用来传递的。这意味着，由于 <code>Child.prototype</code> 对象和 <code>Parent.prototype</code> 对象引用的是同一个对象</em>，因此你对 <code>Child</code> 的原型所作的任何更改也会被应用于 <code>Parent</code> 的原型！我们可不希望子对象能够修改其父对象的属性！</p>
 </blockquote>
 <blockquote>
 <p>最重要的是，这样做不会创建原型链。如果我们想让一个对象从我们想要的任何对象进行继承，而不仅仅是它的原型呢？</p>
@@ -571,15 +572,41 @@ Car.prototype.drive = function () {
 const car = new Car(&apos;silver&apos;, 1988);
 </code></pre><p>当 <code>car.drive()</code> 被调用时，会发生什么？</p>
 <p><strong>参考答案：</strong></p>
-<pre><code>| 顺序   |  事件  |
-| :---:  | :---: |
-| 第一   | JavaScript引擎在`car`对象内搜索名为`drive`的属性|
-| 第二   | JavaScript引擎在`car`对象中找不到`drive`属性 |
-| 第三   | 然后，JavaScript引擎会访问`car.__proto__`属性 |
-| 第四   | 由于`car.__proto__`指向`Car.prototype`,因此JavaScript引擎会在该原型中搜索`drive`|
-| 第五   | 由于`Car.prototype.drive`是一个已定义的属性，因此它会被返回|
-| 第六   | 最后，由于`drive`作为一个方法在`car`上被调用，因此`this`的值会被设置为`car`|
-</code></pre><h2 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h2><hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">顺序</th>
+<th style="text-align:center">事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">第一</td>
+<td style="text-align:center">JavaScript引擎在<code>car</code>对象内搜索名为<code>drive</code>的属性</td>
+</tr>
+<tr>
+<td style="text-align:center">第二</td>
+<td style="text-align:center">JavaScript引擎在<code>car</code>对象中找不到<code>drive</code>属性</td>
+</tr>
+<tr>
+<td style="text-align:center">第三</td>
+<td style="text-align:center">然后，JavaScript引擎会访问<code>car.__proto__</code>属性</td>
+</tr>
+<tr>
+<td style="text-align:center">第四</td>
+<td style="text-align:center">由于<code>car.__proto__</code>指向<code>Car.prototype</code>,因此JavaScript引擎会在该原型中搜索<code>drive</code></td>
+</tr>
+<tr>
+<td style="text-align:center">第五</td>
+<td style="text-align:center">由于<code>Car.prototype.drive</code>是一个已定义的属性，因此它会被返回</td>
+</tr>
+<tr>
+<td style="text-align:center">第六</td>
+<td style="text-align:center">最后，由于<code>drive</code>作为一个方法在<code>car</code>上被调用，因此<code>this</code>的值会被设置为<code>car</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h2><hr>
 <p>到目前为止，我们在继承方面遇到了一些问题。首先，虽然 <code>__proto__</code> 可以访问被调用的对象的原型，但是在你编写的代码中使用它并不是好习惯。</p>
 <p>另一方面，我们也不应该_只_继承原型；这样做不会创建原型链，而且我们对子对象所作的任何更改也会反映在父对象中。</p>
 <p>那么，我们应该如何继续往前呢？</p>
