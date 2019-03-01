@@ -144,7 +144,7 @@
 <meta property="og:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/prototype.png">
-<meta property="og:updated_time" content="2019-03-01T15:59:19.714Z">
+<meta property="og:updated_time" content="2019-03-01T16:01:37.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型继承:子类">
 <meta name="twitter:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
@@ -610,14 +610,14 @@ const car = new Car(&apos;silver&apos;, 1988);
 <p>到目前为止，我们在继承方面遇到了一些问题。首先，虽然 <code>__proto__</code> 可以访问被调用的对象的原型，但是在你编写的代码中使用它并不是好习惯。</p>
 <p>另一方面，我们也不应该_只_继承原型；这样做不会创建原型链，而且我们对子对象所作的任何更改也会反映在父对象中。</p>
 <p>那么，我们应该如何继续往前呢？</p>
-<p>实际上，我们可以借助一种方式来自己设置对象的原型：使用 <code>Object.create()</code>。而且最棒的是，这种方式既可以让我们管理继承，同时又_不会_改变原型！</p>
+<p>实际上，我们可以借助一种方式来自己设置对象的原型：使用 <code>Object.create()</code>。而且最棒的是，这种方式既可以让我们管理继承，同时又 <strong>不会</strong> 改变原型！</p>
 <p><code>Object.create()</code> 会接受一个对象作为参数，并返回一个新的对象，其 <code>__proto__</code> 属性会被设置为传递给它的参数。然后，你只需要将所返回的对象设置为子对象构造函数的原型即可。让我们来看一个例子！</p>
 <p>首先，假设我们有一个 <code>mammal</code> 对象，它有两个属性：<code>vertebrate</code> 和 <code>earBones</code>：</p>
 <pre><code>const mammal = {
     vertebrate: true,
     earBones: 3
 };
-</code></pre><p>还记得吗，<code>Object.create()</code> 会接受一个对象作为参数，并返回一个_新的_对象。这个新对象的 <code>__proto__</code> 属性会被设置为最初传递给 <code>Object.create()</code> 的参数。让我们把这个返回值保存到变量 <code>rabbit</code> 中：</p>
+</code></pre><p>还记得吗，<code>Object.create()</code> 会接受一个对象作为参数，并返回一个 <strong>新的</strong> 对象。这个新对象的 <code>__proto__</code> 属性会被设置为最初传递给 <code>Object.create()</code> 的参数。让我们把这个返回值保存到变量 <code>rabbit</code> 中：</p>
 <pre><code>const rabbit = Object.create(mammal);
 </code></pre><p>我们预期这个新的 <code>rabbit</code> 对象是空白的，没有自己的属性：</p>
 <pre><code>console.log(rabbit);
@@ -707,7 +707,7 @@ const child = new Child();
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr>
 <p>JavaScript 中的继承重点就是建立原型链。这让我们可以子类化，也就是创建一个“子”对象，让它继承“父”对象的大部分或全部属性和方法。然后，我们可以分别实现任何子对象的独特属性和方法，同时仍然保留其父对象的数据和功能。</p>
 <p>对象（实例）通过该实例的 <code>__proto__</code> 属性被秘密链接到其构造函数的原型对象。 你不应该在你编写的任何代码中使用 <code>__proto__</code>。在任何代码中使用 <code>__proto__</code>，或者只继承原型，将会直接导致某些不必要的问题。要在 JavaScript 中高效地管理继承，一个有效的方式就是避免完全改变原型。</p>
-<p><code>Object.create()</code> 可以帮助我们做到这一点，它可以接受一个父对象，返回一个_新的_对象，并将其 <code>__proto__</code> 属性设置为该父对象。</p>
+<p><code>Object.create()</code> 可以帮助我们做到这一点，它可以接受一个父对象，返回一个 <strong>新的</strong> 对象，并将其 <code>__proto__</code> 属性设置为该父对象。</p>
 <h3 id="延伸"><a href="#延伸" class="headerlink" title="延伸"></a>延伸</h3><hr>
 <ul>
 <li><p>MDN 上的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener">继承和原型链</a></p>
