@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="编写一个js函数，该函数有一个n（数字类型），其返回值是一个数组，该数组内是n个随机且不重复的整数，且整数取值范围是[2,32]    题目解读 输入一个数字类型的参数n，会返回一个包含2到32的数字的数组，数组长度是n(比如你输入数字是2，就会返回数组长度为2的数组); 数组里面的数字用 随机函数 生成，然后还要检查数字是否会重复，也要考虑负数情况等边界条件 知识点 1234Math.ceil">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-01T17:05:11.175Z">
+<meta property="og:updated_time" content="2019-03-01T17:08:16.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试-前端编程思路">
 <meta name="twitter:description" content="编写一个js函数，该函数有一个n（数字类型），其返回值是一个数组，该数组内是n个随机且不重复的整数，且整数取值范围是[2,32]    题目解读 输入一个数字类型的参数n，会返回一个包含2到32的数字的数组，数组长度是n(比如你输入数字是2，就会返回数组长度为2的数组); 数组里面的数字用 随机函数 生成，然后还要检查数字是否会重复，也要考虑负数情况等边界条件 知识点 1234Math.ceil">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  1.1k
                 </span>
               
 
@@ -483,11 +483,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Math.ceil();   //向上取整。</span><br><span class="line">Math.floor();  //向下取整。</span><br><span class="line">Math.round();  //四舍五入。</span><br><span class="line">Math.random(); //0.0 ~ 1.0 之间的一个伪随机数。【包含0不包含1) 比如0.8647578968666494</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Math.ceil(Math.random()*10); // 获取从1到10的随机整数 ，取0的概率极小。</span><br><span class="line">Math.round(Math.random());   //可均衡获取0到1的随机整数。</span><br><span class="line">Math.floor(Math.random()*10);  //可均衡获取0到9的随机整数。</span><br><span class="line">Math.round(Math.random()*10);  //基本均衡获取0到10的随机整数，其中获取最小值0和最大值10的几率少一半。</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>直接使用 parseInt，parseFloat 或 Number 将一个非数字的值转化为数字时，表达式返回 NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&apos;abc&apos; - 3   // NaN</span><br><span class="line">parseInt(&apos;abc&apos;)  // NaN</span><br><span class="line">parseFloat(&apos;abc&apos;) // NaN</span><br><span class="line">Number(&apos;abc&apos;)    // NaN</span><br></pre></td></tr></table></figure></p>
+<p>直接使用 parseInt，parseFloat 或 Number 将一个非数字的值转化为数字时，表达式返回 NaN </p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&apos;abc&apos; - 3   // NaN</span><br><span class="line">parseInt(&apos;abc&apos;)  // NaN</span><br><span class="line">parseFloat(&apos;abc&apos;) // NaN</span><br><span class="line">Number(&apos;abc&apos;)    // NaN</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>isNaN() 是一个全局方法，它的作用是检查一个值是否能被 Number() 成功转换 。 如果能转换成功，就返回 false，否则返回 true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">isNaN(NaN)    // true 不能转换</span><br><span class="line">isNaN(&apos;123&apos;)   // false 能转换</span><br><span class="line">isNaN(&apos;abc&apos;)    // true 不能转换</span><br><span class="line">isNaN(&apos;123ab&apos;)   // true 不能转换</span><br><span class="line">isNaN(&apos;123.45abc&apos;) // true 不能转换</span><br></pre></td></tr></table></figure></p>
+<p>isNaN() 是一个全局方法，它的作用是检查一个值是否能被 Number() 成功转换 。 如果能转换成功，就返回 false，否则返回 true </p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">isNaN(NaN)    // true 不能转换</span><br><span class="line">isNaN(&apos;123&apos;)   // false 能转换</span><br><span class="line">isNaN(&apos;abc&apos;)    // true 不能转换</span><br><span class="line">isNaN(&apos;123ab&apos;)   // true 不能转换</span><br><span class="line">isNaN(&apos;123.45abc&apos;) // true 不能转换</span><br></pre></td></tr></table></figure>
 <h4 id="生成随机数方法总结"><a href="#生成随机数方法总结" class="headerlink" title="生成随机数方法总结"></a>生成随机数方法总结</h4><hr>
 <blockquote>
 <p>生成[1,max]的随机数，公式如下：<br>    // max - 期望的最大值<br>    parseInt(Math.random()<em>max,10)+1;<br>    Math.floor(Math.random()</em>max)+1;<br>    Math.ceil(Math.random()*max);</p>
