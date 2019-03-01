@@ -144,7 +144,7 @@
 <meta property="og:description" content="原型、原型链  JavaScript 常被描述为一种基于原型的语言 (prototype-based language)。每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。  准确地说，这些属性和方法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/prototype.png">
-<meta property="og:updated_time" content="2019-03-01T10:31:47.398Z">
+<meta property="og:updated_time" content="2019-03-01T16:04:56.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型继承">
 <meta name="twitter:description" content="原型、原型链  JavaScript 常被描述为一种基于原型的语言 (prototype-based language)。每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。  准确地说，这些属性和方法">
@@ -502,12 +502,12 @@
 <p><img src="/images/prototype.png" alt="原型链"></p>
 <p>还记得吗，每个函数都有一个 <code>prototype</code> 属性，它其实只是一个对象。当使用 new 运算符将该函数作为构造函数来调用时，它会创建并返回一个新的对象。该对象被秘密地链接到其构造函数的 <code>prototype</code>，而这个秘密链接让该对象可以访问 <code>prototype</code> 的属性和方法，就像它自己的一样！</p>
 <p>由于我们知道 <code>prototype</code> 属性仅仅指向一个普通对象，因此<em>这个对象本身也有一个秘密链接指向它的原型。而且，这个原型对象也有引用指向它自己的</em>原型，以此类推。原型链就是这样形成的。</p>
-<p>无论你是访问属性（例如 <code>bailey.lives</code>;）还是调用方法（即 <code>bailey.meow()</code>;），JavaScript 解释器都会按照特定的顺序在原型链中查找它们：</p>
+<p>无论你是访问属性（例如 <code>bailey.lives</code>）还是调用方法（即 <code>bailey.meow()</code>），JavaScript 解释器都会按照特定的顺序在原型链中查找它们：</p>
 <ul>
 <li>首先，JavaScript 引擎将查看对象自身的属性。这意味着，直接在该对象中定义的任何属性和方法将优先于其他位置的任何同名属性和方法（类似于作用域链中的变量阴影）。</li>
 <li>如果找不到目标属性，它将搜索对象的构造函数的原型，以寻找匹配。</li>
 <li>如果原型中不存在该属性，则 JavaScript 引擎将沿着该链继续查找。</li>
-<li>该链的最顶端是 Object() 对象，也就是顶级父对象。如果_仍然_找不到该属性，则该属性为未定义。</li>
+<li>该链的最顶端是 Object() 对象，也就是顶级父对象。如果 <strong>仍然</strong> 找不到该属性，则该属性为未定义。</li>
 </ul>
 <p>之前，我们都是直接在构造函数中定义方法。让我们来看看，如果我们转而在构造函数的 prototype 中定义方法，情况又会如何！</p>
 <pre><code>function Dog(age, weight, name) {
@@ -566,7 +566,7 @@ Dalmatian.prototype.bark = function() {
 </code></pre><blockquote>
 <p>假设我们想定义一个可以在 Dalmatian 构造函数的实例（对象）上调用的方法（我们将会实例化至少 101 个对象！）。前面两种方式中的哪一种是最佳选择？</p>
 </blockquote>
-<p><strong>参考答案：</strong> (B)是最佳选择，因为每次创建 Dalmatian 的实例时，将不需要重新创建 bark 所指向的函数。</p>
+<p><strong>参考答案：</strong> <code>(B)是最佳选择，因为每次创建 Dalmatian 的实例时，将不需要重新创建 bark 所指向的函数。</code></p>
 <h2 id="替换-prototype-对象"><a href="#替换-prototype-对象" class="headerlink" title="替换 prototype 对象"></a>替换 <code>prototype</code> 对象</h2><hr>
 <p>如果完全替换某个函数的 prototype 对象，结果会怎样？这将如何影响该函数所创建的对象？让我们来看一个简单的 Hamster 构造函数，并实例化一些对象：</p>
 <pre><code>function Hamster() { 
