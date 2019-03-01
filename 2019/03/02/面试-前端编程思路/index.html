@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="编写一个js函数，该函数有一个n（数字类型），其返回值是一个数组，该数组内是n个随机且不重复的整数，且整数取值范围是[2,32]    题目解读 输入一个数字类型的参数n，会返回一个包含2到32的数字的数组，数组长度是n(比如你输入数字是2，就会返回数组长度为2的数组); 数组里面的数字用 随机函数 生成，然后还要检查数字是否会重复，也要考虑负数情况等边界条件 知识点 1234Math.ceil">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-01T17:02:47.963Z">
+<meta property="og:updated_time" content="2019-03-01T17:05:11.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试-前端编程思路">
 <meta name="twitter:description" content="编写一个js函数，该函数有一个n（数字类型），其返回值是一个数组，该数组内是n个随机且不重复的整数，且整数取值范围是[2,32]    题目解读 输入一个数字类型的参数n，会返回一个包含2到32的数字的数组，数组长度是n(比如你输入数字是2，就会返回数组长度为2的数组); 数组里面的数字用 随机函数 生成，然后还要检查数字是否会重复，也要考虑负数情况等边界条件 知识点 1234Math.ceil">
@@ -490,26 +490,15 @@
 </blockquote>
 <h4 id="生成随机数方法总结"><a href="#生成随机数方法总结" class="headerlink" title="生成随机数方法总结"></a>生成随机数方法总结</h4><hr>
 <blockquote>
-<p>生成[1,max]的随机数，公式如下：</p>
+<p>生成[1,max]的随机数，公式如下：<br>    // max - 期望的最大值<br>    parseInt(Math.random()<em>max,10)+1;<br>    Math.floor(Math.random()</em>max)+1;<br>    Math.ceil(Math.random()*max);</p>
 </blockquote>
-<pre><code>// max - 期望的最大值
-parseInt(Math.random()*max,10)+1;
-Math.floor(Math.random()*max)+1;
-Math.ceil(Math.random()*max);
-</code></pre><blockquote>
-<p>生成[0,max]到任意数的随机数，公式如下：</p>
+<blockquote>
+<p>生成[0,max]到任意数的随机数，公式如下：<br>    // max - 期望的最大值<br>    parseInt(Math.random()<em>(max+1),10);<br>    Math.floor(Math.random()</em>(max+1));</p>
 </blockquote>
-<pre><code>// max - 期望的最大值
-parseInt(Math.random()*(max+1),10);
-Math.floor(Math.random()*(max+1));
-</code></pre><blockquote>
-<p>生成[min,max]的随机数，公式如下：</p>
+<blockquote>
+<p>生成[min,max]的随机数，公式如下：<br>    // max - 期望的最大值<br>    // min - 期望的最小值<br>    parseInt(Math.random()<em>(max-min+1)+min,10);<br>    Math.floor(Math.random()</em>(max-min+1)+min);</p>
 </blockquote>
-<pre><code>// max - 期望的最大值
-// min - 期望的最小值
-parseInt(Math.random()*(max-min+1)+min,10);
-Math.floor(Math.random()*(max-min+1)+min);
-</code></pre><h4 id="编程思维："><a href="#编程思维：" class="headerlink" title="编程思维："></a>编程思维：</h4><hr>
+<h4 id="编程思维："><a href="#编程思维：" class="headerlink" title="编程思维："></a>编程思维：</h4><hr>
 <p>可用 —&gt; 健壮 —&gt; 可靠 —&gt; 宽容</p>
 <p>健壮：</p>
 <ul>
