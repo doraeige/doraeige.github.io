@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="我们知道 根据函数的调用方式 this 会设成不同的值，Javascript 提供了几种设置 this值的方法:  call() apply() bind()   call 和 apply 作为方法在函数上被调用，会因为参数的传入方式不同而有所不同，bind 是返回新函数的方法.  call call() 是一个直接调用到函数上的方法。我们传递给它一个单一的值，以设置为 this 的值，然后逐个传">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T12:23:12.072Z">
+<meta property="og:updated_time" content="2019-03-01T09:50:17.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置自己的this">
 <meta name="twitter:description" content="我们知道 根据函数的调用方式 this 会设成不同的值，Javascript 提供了几种设置 this值的方法:  call() apply() bind()   call 和 apply 作为方法在函数上被调用，会因为参数的传入方式不同而有所不同，bind 是返回新函数的方法.  call call() 是一个直接调用到函数上的方法。我们传递给它一个单一的值，以设置为 this 的值，然后逐个传">
@@ -705,7 +705,7 @@ const car = {
 <li><code>bind()</code> 会返回一个新的函数，并将 this 绑定到一个特定对象，让我们可以按照函数的样式来调用它。<br>如需进一步研究，我们建议你查看 Kyle Simpson 有关 this 的你不了解 JS 系列，链接已在下方提供。</li>
 </ul>
 <p>到目前为止，你已经看到函数、对象和 this 关键字是如何相互关联的。你也看到了 JavaScript 中的几乎所有东西都是一个对象！你知道吗，你甚至可以将<em>对象建立在其他对象上！这是原型继承背后的主要思想。通过实现它，对象可以接受其他对象</em>的属性。接下来，我们将探索这一切，以及更多知识！</p>
-<h3 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h3><hr>
+<h3 id="延伸"><a href="#延伸" class="headerlink" title="延伸"></a>延伸</h3><hr>
 <ul>
 <li><p><a href="https://github.com/doraeige/document/blob/master/js/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%EF%BC%88%E4%B8%8A%E5%8D%B7%EF%BC%89.pdf" target="_blank" rel="noopener">你不知道的JavaScript（上卷）</a></p>
 </li>
@@ -770,6 +770,10 @@ const car = {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/01/原型继承/" rel="prev" title="原型继承">
+                原型继承 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -850,7 +854,7 @@ const car = {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -861,7 +865,7 @@ const car = {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -872,7 +876,7 @@ const car = {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -981,7 +985,7 @@ const car = {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#call"><span class="nav-number">1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply"><span class="nav-number">2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏向选择其中一种方法"><span class="nav-number">3.</span> <span class="nav-text">偏向选择其中一种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">3.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调和-this"><span class="nav-number">4.</span> <span class="nav-text">回调和 this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用匿名闭包来保存-this"><span class="nav-number">5.</span> <span class="nav-text">使用匿名闭包来保存 this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-bind-来保存-this"><span class="nav-number">6.</span> <span class="nav-text">使用 bind() 来保存 this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习-1"><span class="nav-number">6.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#友情链接"><span class="nav-number">7.1.</span> <span class="nav-text">友情链接</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#call"><span class="nav-number">1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply"><span class="nav-number">2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏向选择其中一种方法"><span class="nav-number">3.</span> <span class="nav-text">偏向选择其中一种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">3.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调和-this"><span class="nav-number">4.</span> <span class="nav-text">回调和 this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用匿名闭包来保存-this"><span class="nav-number">5.</span> <span class="nav-text">使用匿名闭包来保存 this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-bind-来保存-this"><span class="nav-number">6.</span> <span class="nav-text">使用 bind() 来保存 this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习-1"><span class="nav-number">6.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#延伸"><span class="nav-number">7.1.</span> <span class="nav-text">延伸</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1017,7 +1021,7 @@ const car = {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.1k</span>
+    <span title="Site words total count">8.6k</span>
   
 </div>
 
