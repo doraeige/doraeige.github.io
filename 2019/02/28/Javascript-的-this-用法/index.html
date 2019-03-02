@@ -135,18 +135,18 @@
 
 
 
-<meta name="description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
+<meta name="description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
 <meta name="keywords" content="this">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript 的 this 用法">
 <meta property="og:url" content="http://yoursite.com/2019/02/28/Javascript-的-this-用法/index.html">
 <meta property="og:site_name" content="hey,Sophia!">
-<meta property="og:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
+<meta property="og:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T11:25:47.072Z">
+<meta property="og:updated_time" content="2019-03-02T08:51:38.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 的 this 用法">
-<meta name="twitter:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
+<meta name="twitter:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
 
 
 
@@ -476,61 +476,28 @@
         <p><code>this</code> 是 JavaScript 语言的一个关键字。</p>
 <h3 id="构造函数中的-this"><a href="#构造函数中的-this" class="headerlink" title="构造函数中的 this"></a>构造函数中的 this</h3><hr>
 <p>在上一部分，我们使用了方法中的 <code>this</code> 来访问该方法所属的 <strong>对象</strong>。让我们再来看一个例子：</p>
-<pre><code>function Cat(name) {
-  this.name = name
-  this.lives = 9;
-  this.sayName = function () {
-    console.log( &apos;Meow! My name is &apos; + this.name);
-  };
-}
-
-const bailey = new Cat();
-</code></pre><p>在上面的 <code>Cat()</code> 构造函数中，<code>sayName</code> 所指向的函数引用了 <code>this.name</code>。之前，我们已经看到过在方法中使用 <code>this</code>，但在这里，<code>this</code> 是指什么呢？</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.lives = <span class="number">9</span>;</span><br><span class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'Meow! My name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bailey = <span class="keyword">new</span> Cat();</span><br></pre></td></tr></table></figure>
+<p>在上面的 <code>Cat()</code> 构造函数中，<code>sayName</code> 所指向的函数引用了 <code>this.name</code>。之前，我们已经看到过在方法中使用 <code>this</code>，但在这里，<code>this</code> 是指什么呢？</p>
 <p>事实证明，当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 会被设置为新创建的对象！让我们来看看新的 <code>bailey</code> 对象是什么样的：</p>
-<pre><code>{
-  name: Bailey,
-  sayName: function () {
-     console.log(&apos;Meow! My name is &apos; + this.name);
-  }
-}
-</code></pre><p>在以上代码段中，请注意 this 位于构造函数 <strong>外部</strong>。正如我们在上一篇文章中所看到的，当你说 this 时，你其实是在说“这个对象”或“当前对象”。因此，<code>sayName()</code> 方法可以使用 this 来访问该对象的 <code>name</code> 属性！这使得以下方法调用成为可能：</p>
-<pre><code> bailey.sayName();
-
-// Meow! My name is Bailey
-</code></pre><h2 id="this-什么时候会被赋值？"><a href="#this-什么时候会被赋值？" class="headerlink" title="this 什么时候会被赋值？"></a>this 什么时候会被赋值？</h2><hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    name: Bailey,</span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Meow! My name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在以上代码段中，请注意 this 位于构造函数 <strong>外部</strong>。正如我们在上一篇文章中所看到的，当你说 this 时，你其实是在说“这个对象”或“当前对象”。因此，<code>sayName()</code> 方法可以使用 this 来访问该对象的 <code>name</code> 属性！这使得以下方法调用成为可能：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> bailey.sayName();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Meow! My name is Bailey</span></span><br></pre></td></tr></table></figure>
+<h2 id="this-什么时候会被赋值？"><a href="#this-什么时候会被赋值？" class="headerlink" title="this 什么时候会被赋值？"></a>this 什么时候会被赋值？</h2><hr>
 <p>一个常见的误解是，this 指向定义它的对象。事实并非如此！直到某个对象调用使用 this 的方法，this 才会被赋值。换句话说，赋给 this 的值取决于 调用定义 this 的方法的对象。让我们来看一个例子：</p>
-<pre><code>const dog = {
-  bark: function () {
-    console.log(&apos;Woof!&apos;);
-  },
-  barkTwice: function () {
-    this.bark();
-    this.bark();
-  }
-};
-</code></pre><p>让我们继续调用 <code>dog</code> 的两个方法：</p>
-<pre><code>dog.bark();
-// Woof!
-
-dog.barkTwice();
-// Woof!
-// Woof!
-</code></pre><p>我们知道，当我们调用 <code>dog.bark()</code> 或 <code>dog.barkTwice()</code> 时，变量 <code>this</code> 将被设置。由于 <code>this</code> 可以访问调用它的对象，因此 <code>barkTwice</code> 可以使用 this 来访问包含 <code>bark</code> 方法的 <code>dog</code> 对象。<br>但是，如果我们在 <code>barkTwice</code> 中使用 <code>bark()</code>，而不是 <code>this.bark()</code>，将会怎样？该函数会先在 <code>barkTwice</code> 的作用域内查找一个名为 <code>bark</code> 的局部变量。如果没有找到 <code>bark</code>，则会沿着作用域链继续查找。<br>综合来看：<code>this.bark()</code> 会告诉 <code>barkTwice</code> 查看 <code>dog</code>（调用该方法的对象）以查找 <code>bark</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> dog = &#123;</span><br><span class="line">  bark: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Woof!'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  barkTwice: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.bark();</span><br><span class="line">    <span class="keyword">this</span>.bark();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>让我们继续调用 <code>dog</code> 的两个方法：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">dog.bark();</span><br><span class="line"><span class="comment">// Woof!</span></span><br><span class="line"></span><br><span class="line">dog.barkTwice();</span><br><span class="line"><span class="comment">// Woof!</span></span><br><span class="line"><span class="comment">// Woof!</span></span><br></pre></td></tr></table></figure>
+<p>我们知道，当我们调用 <code>dog.bark()</code> 或 <code>dog.barkTwice()</code> 时，变量 <code>this</code> 将被设置。由于 <code>this</code> 可以访问调用它的对象，因此 <code>barkTwice</code> 可以使用 this 来访问包含 <code>bark</code> 方法的 <code>dog</code> 对象。<br>但是，如果我们在 <code>barkTwice</code> 中使用 <code>bark()</code>，而不是 <code>this.bark()</code>，将会怎样？该函数会先在 <code>barkTwice</code> 的作用域内查找一个名为 <code>bark</code> 的局部变量。如果没有找到 <code>bark</code>，则会沿着作用域链继续查找。<br>综合来看：<code>this.bark()</code> 会告诉 <code>barkTwice</code> 查看 <code>dog</code>（调用该方法的对象）以查找 <code>bark</code>。</p>
 <h2 id="this-会被设置为什么？"><a href="#this-会被设置为什么？" class="headerlink" title="this 会被设置为什么？"></a>this 会被设置为什么？</h2><hr>
 <p>到目前为止，我们已经在许多不同的上下文中看到了 <code>this</code>，比如在方法中，或被构造函数引用。现在，让我们把它们放在一起来看一下！<br>有四种方式可以调用函数，而每种方式都会不同地设置 <code>this</code>。</p>
 <ul>
 <li>首先，使用 new 关键字来调用构造函数会将  <code>this</code> 设置为一个新创建的对象。还记得吗，在我们之前创建 <code>Cat()</code> 的实例时，this 被设置为新的 <code>bailey</code> 对象。</li>
 <li>另一方面，调用属于一个对象的函数（即_方法_）会将 <code>this</code> 设置为该对象本身。回想一下前面的示例，<code>dog</code> 对象的 <code>barkTwice</code> 方法能够访问 <code>dog</code> 本身的属性。</li>
-<li><p>第三，单独调用一个函数（即简单地调用一个常规函数）将把 <code>this</code> 设置为 <code>window</code>。如果主机环境是浏览器，则它将是全局对象。</p>
-<pre><code>function funFunction() {
-  return this;
-}
-
-funFunction();
-// (返回全局对象, `window`)
-</code></pre></li>
-<li><p>第四种调用函数的方式可以让我们自己设置 this！现在不用在意这一点，我们将在下一部分进行深入探讨。</p>
-</li>
+<li>第三，单独调用一个函数（即简单地调用一个常规函数）将把 <code>this</code> 设置为 <code>window</code>。如果主机环境是浏览器，则它将是全局对象。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funFunction();</span><br><span class="line"><span class="comment">// (返回全局对象, `window`)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第四种调用函数的方式可以让我们自己设置 this！现在不用在意这一点，我们将在下一部分进行深入探讨。</li>
 </ul>
 <table>
 <thead>
@@ -562,36 +529,20 @@ funFunction();
 <h3 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h3><blockquote>
 <p>请考虑以下构造函数 <code>City</code>：</p>
 </blockquote>
-<pre><code>function City(name, population) {
-    this.name = name;
-    this.population = population;
-
-    this.identify = function () {
-        console.log(`${this.name}&apos;s population is ${this.population}.`);
-    };
-}    
-</code></pre><p>当 <code>const sanFrancisco = new City(&#39;San Francisco&#39;, 870000)</code>; 被执行时，<code>this</code> 的值是什么？</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">City</span>(<span class="params">name, population</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.population = population;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.identify = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>'s population is <span class="subst">$&#123;<span class="keyword">this</span>.population&#125;</span>.`</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当 <code>const sanFrancisco = new City(&#39;San Francisco&#39;, 870000)</code>; 被执行时，<code>this</code> 的值是什么？</p>
 <p><strong>答案：</strong> 新创建的对象，被 <code>sanFrancisco</code> 引用</p>
 <blockquote>
 <p>请考虑以下对象 <code>building</code>：</p>
 </blockquote>
-<pre><code>const building = {
-    floors: 5,
-    addFloor: function () {
-        this.floors += 1;
-    }
-    };
-
-building.addFloor();
-</code></pre><p>当 <code>building.addFloor()</code> 被执行时，<code>this</code> 的值是什么？</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> building = &#123;</span><br><span class="line">    floors: <span class="number">5</span>,</span><br><span class="line">    addFloor: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.floors += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">building.addFloor();</span><br></pre></td></tr></table></figure>
+<p>当 <code>building.addFloor()</code> 被执行时，<code>this</code> 的值是什么？</p>
 <p><strong>答案：</strong> <code>building</code></p>
 <blockquote>
 <p>当以下函数被调用时，this 的值是多少？</p>
 </blockquote>
-<pre><code>function myFunction() {
-    console.log(&quot;What is the value of &apos;this&apos;?&quot;);
-}
-</code></pre><p><strong>答案：</strong> <code>window</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"What is the value of 'this'?"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>答案：</strong> <code>window</code></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><hr>
 <p>函数、对象和 <code>this</code> 彼此相互关联。当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 变量会被设置为新创建的对象。当在对象上调用方法时，<code>this</code> 会被设置为该对象本身。当在浏览器环境中调用函数时，<code>this</code> 会被设置为 <code>window</code>，也被称为全局对象。</p>
 <p>除此之外，还有一组方式可以调用函数：使用 <code>apply()</code> 和使用 <code>call()</code>。这两种方式有许多相似之处，每一种方式都允许我们指定如何设置 <code>this</code>。接下来，我们会对它们进行详细分析！</p>
