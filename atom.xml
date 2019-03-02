@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-01T17:31:29.828Z</updated>
+  <updated>2019-03-02T07:41:01.299Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>远程调试</title>
+    <link href="http://yoursite.com/2019/03/02/%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
+    <id>http://yoursite.com/2019/03/02/远程调试/</id>
+    <published>2019-03-02T07:21:39.000Z</published>
+    <updated>2019-03-02T07:41:01.299Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>在真实设备上测试非常重要，所以你需要确保随时能进行测试</p></blockquote><h2 id="如何在-Chrome-中对-Android-进行远程调试"><a href="#如何在-Chrome-中对-Android-进行远程调试" class="headerlink" title="如何在 Chrome 中对 Android 进行远程调试"></a>如何在 Chrome 中对 Android 进行远程调试</h2><ul><li><p><a href="https://www.google.com/chrome/browser/canary.html" target="_blank" rel="noopener">下载Chrome Canary版</a>（它不会影响现有的Chrome安装）</p></li><li><p><a href="https://developers.google.cn/web/tools/chrome-devtools/remote-debugging/?hl=zh" target="_blank" rel="noopener">在装有 Chrome 的 Android 上远程调试</a></p></li></ul><blockquote><p>什么是 Chrome Canary版 ，我为什么要使用它呢？</p></blockquote><p>Chrome Canary版 是Chrome浏览器的开发版本。它的外观和行为与常规的Chrome浏览器类似，但它包含那些尚未公布的新的试验性功能。我们建议你使用最新的 Canary 来分析网站。然而，需要注意的一点是，Canary 不能保证稳定，因此可能会有崩溃和偶尔出错的情况。</p><h2 id="用-iOS-网页调试代理-配合移动端的-Safari"><a href="#用-iOS-网页调试代理-配合移动端的-Safari" class="headerlink" title="用 iOS 网页调试代理 配合移动端的 Safari"></a>用 iOS 网页调试代理 配合移动端的 Safari</h2><ul><li><p><a href="https://github.com/google/ios-webkit-debug-proxy" target="_blank" rel="noopener">iOS WebKit 调试代理(英)</a></p></li><li><p><a href="https://www.smashingmagazine.com/2014/09/testing-mobile-emulators-simulators-remote-debugging/" target="_blank" rel="noopener">Testing Mobile: Emulators, Simulators And Remote Debugging(英)</a></p></li><li><p><a href="https://sebastianblade.com/debug-ios-safari-with-chrome-devtools/" target="_blank" rel="noopener">如何用 Chrome DevTools 调试 iOS Safari</a></p></li></ul><blockquote><p>想要使用云中的不同浏览器测试<br>尝试 <a href="https://www.browserstack.com/" target="_blank" rel="noopener">BrowserStack</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在真实设备上测试非常重要，所以你需要确保随时能进行测试&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;如何在-Chrome-中对-Android-进行远程调试&quot;&gt;&lt;a href=&quot;#如何在-Chrome-中对-Android-进行远程调试&quot; 
+      
+    
+    </summary>
+    
+      <category term="调试" scheme="http://yoursite.com/categories/%E8%B0%83%E8%AF%95/"/>
+    
+    
+      <category term="移动设备" scheme="http://yoursite.com/tags/%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87/"/>
+    
+      <category term="调试" scheme="http://yoursite.com/tags/%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>面试官问你&quot;有什么问题问我吗?&quot;，该如何回答？</title>
