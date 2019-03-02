@@ -144,7 +144,7 @@
 <meta property="og:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/prototype.png">
-<meta property="og:updated_time" content="2019-03-02T08:36:09.601Z">
+<meta property="og:updated_time" content="2019-03-02T08:42:44.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型继承:子类">
 <meta name="twitter:description" content="子类 实现继承的好处之一就是它允许你重用现有代码。通过建立继承，我们可以子类化，也就是让一个“子”对象接受“父”对象的大部分或全部属性和方法，同时保留它自己独特的方法。 假设我们有一个父 Animal 对象（即构造函数），其中包含诸如 age 和 weight 等属性。同一个 Animal 对象还可以访问 eat 和 sleep 等方法。 现在，再假设我们要创建一个 Cat 子对象。与描述其他动物">
@@ -491,34 +491,19 @@
 <p>让我们将以下 <code>PolarBear()</code> 构造函数的 <code>prototype</code> 属性赋为 <code>bear</code>：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PolarBear</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PolarBear.prototype = bear;</span><br></pre></td></tr></table></figure>
 <p>现在，让我们调用 PolarBear() 构造函数来创建一个新的对象，然后给它两个属性：</p>
-<pre><code>const snowball = new PolarBear();
-
-snowball.color = &apos;white&apos;;
-
-snowball.favoriteDrink = &apos;cola&apos;;
-</code></pre><p><code>snowball</code> 对象目前看起来像这样：</p>
-<pre><code>{
-    color: &apos;white&apos;,
-    favoriteDrink: &apos;cola&apos;
-}
-</code></pre><p>请注意，<code>snowball</code> 只有两个自己的属性：<code>color</code> 和 <code>favoriteDrink</code>。但是，<code>snowball</code> 也可以访问自身并不具有的属性：<code>claws</code> 和 <code>diet</code>：</p>
-<pre><code>console.log(snowball.claws);
-//true
-
-console.log(snowball.diet);
-//&apos;carnivore&apos;
-</code></pre><p>由于 claw 和 diet 都作为 <code>prototype</code> 对象中的属性存在，因此它们会被查找，因为对象被秘密链接到其构造函数的 <code>prototype</code> 属性。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> snowball = <span class="keyword">new</span> PolarBear();</span><br><span class="line"></span><br><span class="line">snowball.color = <span class="string">'white'</span>;</span><br><span class="line"></span><br><span class="line">snowball.favoriteDrink = <span class="string">'cola'</span>;</span><br></pre></td></tr></table></figure>
+<p><code>snowball</code> 对象目前看起来像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    color: <span class="string">'white'</span>,</span><br><span class="line">    favoriteDrink: <span class="string">'cola'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请注意，<code>snowball</code> 只有两个自己的属性：<code>color</code> 和 <code>favoriteDrink</code>。但是，<code>snowball</code> 也可以访问自身并不具有的属性：<code>claws</code> 和 <code>diet</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(snowball.claws);</span><br><span class="line"><span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(snowball.diet);</span><br><span class="line"><span class="comment">//'carnivore'</span></span><br></pre></td></tr></table></figure>
+<p>由于 claw 和 diet 都作为 <code>prototype</code> 对象中的属性存在，因此它们会被查找，因为对象被秘密链接到其构造函数的 <code>prototype</code> 属性。</p>
 <p>太棒了！但你可能会想：这个通向 <code>prototype</code> 对象的秘密链接到底是什么呢？当从 <code>PolarBear()</code> 构造函数构造对象之后（如 <code>snowball</code>），这些对象可以立即访问 <code>PolarBear()</code> 的原型中的属性。这究竟是怎么做到的呢？</p>
 <p>事实证明，这个秘密链接是 <code>snowball</code> 的 <code>__proto__</code> 属性（注意每一端有两个下划线）。</p>
 <p><code>__proto__</code> 是构造函数所创建的所有对象（即实例）的一个属性，并直接指向该构造函数的 <code>prototype</code> 对象。让我们来看看它是什么样的！</p>
-<pre><code>console.log(snowball.__proto__);
-
-//{ claws: true, diet: &apos;carnivore&apos; }
-</code></pre><p>由于 <code>__proto__</code> 属性所指向的对象与 <code>PolarBear</code> 的原型 <code>bear</code> 相同，因此将它们进行比较会返回 <code>true</code>：</p>
-<pre><code>console.log(snowball.__proto__ === bear);
-
-//true
-</code></pre><hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(snowball.__proto__);</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#123; claws: true, diet: 'carnivore' &#125;</span></span><br></pre></td></tr></table></figure>
+<p>由于 <code>__proto__</code> 属性所指向的对象与 <code>PolarBear</code> 的原型 <code>bear</code> 相同，因此将它们进行比较会返回 <code>true</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(snowball.__proto__ === bear);</span><br><span class="line"></span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<hr>
 <blockquote>
 <p><strong>强烈建议不要重新分配 <strong>proto</strong> 属性，甚至不要在你编写的任何代码中使用它。</strong></p>
 </blockquote>
@@ -546,28 +531,14 @@ console.log(snowball.diet);
 <blockquote>
 <p>请考虑以下代码:</p>
 </blockquote>
-<pre><code>function GuineaPig (name) {
-    this.name = name;
-    this.isCute = true;
-}
-
-const waffle = new GuineaPig(&apos;Waffle&apos;);
-</code></pre><p><code>waffle.__proto__</code>指向什么？</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GuineaPig</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.isCute = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> waffle = <span class="keyword">new</span> GuineaPig(<span class="string">'Waffle'</span>);</span><br></pre></td></tr></table></figure>
+<p><code>waffle.__proto__</code>指向什么？</p>
 <p><strong>参考答案：</strong> <code>GuineaPig.prototype</code></p>
 <blockquote>
 <p>请考虑以下代码:</p>
 </blockquote>
-<pre><code>function Car (color, year) {
-    this.color = color;
-    this.year = year;
-}
-
-Car.prototype.drive = function () {
-    console.log(&apos;Vroom vroom!&apos;);
-};
-
-const car = new Car(&apos;silver&apos;, 1988);
-</code></pre><p>当 <code>car.drive()</code> 被调用时，会发生什么？</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span> (<span class="params">color, year</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">    <span class="keyword">this</span>.year = year;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Car.prototype.drive = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Vroom vroom!'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> car = <span class="keyword">new</span> Car(<span class="string">'silver'</span>, <span class="number">1988</span>);</span><br></pre></td></tr></table></figure>
+<p>当 <code>car.drive()</code> 被调用时，会发生什么？</p>
 <p><strong>参考答案：</strong></p>
 <table>
 <thead>
@@ -610,86 +581,37 @@ const car = new Car(&apos;silver&apos;, 1988);
 <p>实际上，我们可以借助一种方式来自己设置对象的原型：使用 <code>Object.create()</code>。而且最棒的是，这种方式既可以让我们管理继承，同时又 <strong>不会</strong> 改变原型！</p>
 <p><code>Object.create()</code> 会接受一个对象作为参数，并返回一个新的对象，其 <code>__proto__</code> 属性会被设置为传递给它的参数。然后，你只需要将所返回的对象设置为子对象构造函数的原型即可。让我们来看一个例子！</p>
 <p>首先，假设我们有一个 <code>mammal</code> 对象，它有两个属性：<code>vertebrate</code> 和 <code>earBones</code>：</p>
-<pre><code>const mammal = {
-    vertebrate: true,
-    earBones: 3
-};
-</code></pre><p>还记得吗，<code>Object.create()</code> 会接受一个对象作为参数，并返回一个 <strong>新的</strong> 对象。这个新对象的 <code>__proto__</code> 属性会被设置为最初传递给 <code>Object.create()</code> 的参数。让我们把这个返回值保存到变量 <code>rabbit</code> 中：</p>
-<pre><code>const rabbit = Object.create(mammal);
-</code></pre><p>我们预期这个新的 <code>rabbit</code> 对象是空白的，没有自己的属性：</p>
-<pre><code>console.log(rabbit);
-
-//{}
-</code></pre><p>但是，<code>rabbit</code> 现在应该已被秘密链接到 <code>mammal</code>。也就是说，它的 <code>__proto__</code> 属性应该指向 <code>mammal</code>：</p>
-<pre><code>console.log(rabbit.__proto__ === mammal);
-
-//true
-</code></pre><p>太棒了！这意味着，现在 <code>rabbit</code> 扩展了 <code>mammal</code>（即 <code>rabbit</code> 继承自 <code>mammal</code>），而且 <code>rabbit</code> 可以将 <code>mammal</code> 的属性当作自己的属性一样进行访问！</p>
-<pre><code>console.log(rabbit.vertebrate);
-//true
-
-console.log(rabbit.earBones);
-//3
-</code></pre><p><code>Object.create()</code> 给了我们一个在 JavaScript 中建立原型继承的简洁方法。我们可以通过这种方式轻松扩展原型链，而且可以让对象从我们想要的任何对象进行继承！</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mammal = &#123;</span><br><span class="line">    vertebrate: <span class="literal">true</span>,</span><br><span class="line">    earBones: <span class="number">3</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>还记得吗，<code>Object.create()</code> 会接受一个对象作为参数，并返回一个 <strong>新的</strong> 对象。这个新对象的 <code>__proto__</code> 属性会被设置为最初传递给 <code>Object.create()</code> 的参数。让我们把这个返回值保存到变量 <code>rabbit</code> 中：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> rabbit = <span class="built_in">Object</span>.create(mammal);</span><br></pre></td></tr></table></figure>
+<p>我们预期这个新的 <code>rabbit</code> 对象是空白的，没有自己的属性：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(rabbit);</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>但是，<code>rabbit</code> 现在应该已被秘密链接到 <code>mammal</code>。也就是说，它的 <code>__proto__</code> 属性应该指向 <code>mammal</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(rabbit.__proto__ === mammal);</span><br><span class="line"></span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>太棒了！这意味着，现在 <code>rabbit</code> 扩展了 <code>mammal</code>（即 <code>rabbit</code> 继承自 <code>mammal</code>），而且 <code>rabbit</code> 可以将 <code>mammal</code> 的属性当作自己的属性一样进行访问！</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(rabbit.vertebrate);</span><br><span class="line"><span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(rabbit.earBones);</span><br><span class="line"><span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<p><code>Object.create()</code> 给了我们一个在 JavaScript 中建立原型继承的简洁方法。我们可以通过这种方式轻松扩展原型链，而且可以让对象从我们想要的任何对象进行继承！</p>
 <p>下面让我们来看一个更复杂的例子：</p>
-<pre><code>function Animal (name) {
-    this.name = name;
-}
-
-Animal.prototype.walk = function () {
-    console.log(`${this.name} walks!`);
-};
-
-function Cat (name) {
-    Animal.call(this, name);
-    this.lives = 9;
-}
-</code></pre><p>这是一个 Animal 构造函数，以及一个在 Animal 的原型上直接定义的 walk 方法，此外，还有一个 Cat 构造函数，你可能注意到，我们在 Cat 构造函数中使用了 call 方法，并且直接在 Animal 构造函数 中调用它。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Animal.prototype.walk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> walks!`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">    Animal.call(<span class="keyword">this</span>, name);</span><br><span class="line">    <span class="keyword">this</span>.lives = <span class="number">9</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个 Animal 构造函数，以及一个在 Animal 的原型上直接定义的 walk 方法，此外，还有一个 Cat 构造函数，你可能注意到，我们在 Cat 构造函数中使用了 call 方法，并且直接在 Animal 构造函数 中调用它。</p>
 <p>我们使用 call 而不是关键字 new ，因为我们不想构造一个全新的 animal 对象。我们只关心 cat 实例或 cat 对象上的 animal 初始化逻辑，call 方法的作用是调用 Animal 并将 this 设为 cat 实例，否则 <code>this.name</code> 将是 <code>undefined</code>。</p>
 <p>现在，有了这个继承自 Animal 的 Cat:</p>
-<pre><code>Cat.prototype = Object.create(Animal.prototype);
-// Animal{}
-</code></pre><p>我们还需要更改构造函数, 否则所有的 cat 对象的构造函数将设为 animal：</p>
-<pre><code>Cat.prototype.constructor = Cat;
-
-// f Cat(name){
-//     Animal.call(this, name);
-//     this.lives = 9; 
-// }
-</code></pre><p>现在，我们向 cat 的原型添加一个 使所有 cat 对象都能共享的方法: Meow</p>
-<pre><code>Cat.prototype.meow = function () {
-    console.log(&apos;Meow!&apos;);
-};
-
-// f () {
-//    console.log(&apos;Meow!&apos;);
-// }
-</code></pre><p>使用关键字 new 调用 cat 构造函数，并初始化新的 cat 对象 称之为 Bambi：</p>
-<pre><code>const bambi = new Cat(&apos;Bambi&apos;);
-
-bambi.meow(); // Meow!
-bambi.walk(); // Bambi walks!
-
-bambi.name; // &quot;Bambi&quot;
-</code></pre><blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Cat.prototype = <span class="built_in">Object</span>.create(Animal.prototype);</span><br><span class="line"><span class="comment">// Animal&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>我们还需要更改构造函数, 否则所有的 cat 对象的构造函数将设为 animal：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"></span><br><span class="line"><span class="comment">// f Cat(name)&#123;</span></span><br><span class="line"><span class="comment">//     Animal.call(this, name);</span></span><br><span class="line"><span class="comment">//     this.lives = 9; </span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+<p>现在，我们向 cat 的原型添加一个 使所有 cat 对象都能共享的方法: Meow</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Cat.prototype.meow = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Meow!'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// f () &#123;</span></span><br><span class="line"><span class="comment">//    console.log('Meow!');</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+<p>使用关键字 new 调用 cat 构造函数，并初始化新的 cat 对象 称之为 Bambi：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> bambi = <span class="keyword">new</span> Cat(<span class="string">'Bambi'</span>);</span><br><span class="line"></span><br><span class="line">bambi.meow(); <span class="comment">// Meow!</span></span><br><span class="line">bambi.walk(); <span class="comment">// Bambi walks!</span></span><br><span class="line"></span><br><span class="line">bambi.name; <span class="comment">// "Bambi"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>总结下，为了在JavaScript 中有效地管理继承,一个很好的方式是避免完全更改原型   ，为此，我们可以使用 <code>object.create</code></p>
 </blockquote>
 <h3 id="小练习-1"><a href="#小练习-1" class="headerlink" title="小练习"></a>小练习</h3><hr>
 <blockquote>
 <p>请考虑以下代码：</p>
 </blockquote>
-<pre><code>function Parent() {
-    // ...
-}
-
-function Child() {
-    // ...
-}
-
-Child.prototype = Object.create(Parent.prototype);
-
-const child = new Child();
-</code></pre><p>当 <code>child instanceof Parent;</code> 被执行时，什么会被输出到控制台？</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent.prototype);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> child = <span class="keyword">new</span> Child();</span><br></pre></td></tr></table></figure>
+<p>当 <code>child instanceof Parent;</code> 被执行时，什么会被输出到控制台？</p>
 <p><strong>参考答案：</strong> <code>true</code></p>
 <blockquote>
 <p>以下哪一项有关 <code>Object.create()</code> 的说法是正确的？请选择所有适用项：</p>
