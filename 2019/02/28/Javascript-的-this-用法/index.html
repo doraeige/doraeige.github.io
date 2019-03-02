@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-02T08:51:38.543Z">
+<meta property="og:updated_time" content="2019-03-02T08:53:17.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 的 this 用法">
 <meta name="twitter:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
@@ -481,7 +481,7 @@
 <p>事实证明，当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 会被设置为新创建的对象！让我们来看看新的 <code>bailey</code> 对象是什么样的：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    name: Bailey,</span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Meow! My name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在以上代码段中，请注意 this 位于构造函数 <strong>外部</strong>。正如我们在上一篇文章中所看到的，当你说 this 时，你其实是在说“这个对象”或“当前对象”。因此，<code>sayName()</code> 方法可以使用 this 来访问该对象的 <code>name</code> 属性！这使得以下方法调用成为可能：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> bailey.sayName();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Meow! My name is Bailey</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">bailey.sayName();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Meow! My name is Bailey</span></span><br></pre></td></tr></table></figure>
 <h2 id="this-什么时候会被赋值？"><a href="#this-什么时候会被赋值？" class="headerlink" title="this 什么时候会被赋值？"></a>this 什么时候会被赋值？</h2><hr>
 <p>一个常见的误解是，this 指向定义它的对象。事实并非如此！直到某个对象调用使用 this 的方法，this 才会被赋值。换句话说，赋给 this 的值取决于 调用定义 this 的方法的对象。让我们来看一个例子：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> dog = &#123;</span><br><span class="line">  bark: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Woof!'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  barkTwice: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.bark();</span><br><span class="line">    <span class="keyword">this</span>.bark();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
