@@ -135,18 +135,18 @@
 
 
 
-<meta name="description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
+<meta name="description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;#39;Meo">
 <meta name="keywords" content="this">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript 的 this 用法">
 <meta property="og:url" content="http://yoursite.com/2019/02/28/Javascript-的-this-用法/index.html">
 <meta property="og:site_name" content="hey,Sophia!">
-<meta property="og:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
+<meta property="og:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;#39;Meo">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-02-28T11:25:47.072Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 的 this 用法">
-<meta name="twitter:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;apos;Me">
+<meta name="twitter:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) {   this.name = name   this.lives = 9;   this.sayName = function () {     console.log( &amp;#39;Meo">
 
 
 
@@ -480,19 +480,19 @@
   this.name = name
   this.lives = 9;
   this.sayName = function () {
-    console.log( &apos;Meow! My name is &apos; + this.name);
+    console.log( &#39;Meow! My name is &#39; + this.name);
   };
 }
 
 const bailey = new Cat();
 </code></pre><p>在上面的 <code>Cat()</code> 构造函数中，<code>sayName</code> 所指向的函数引用了 <code>this.name</code>。之前，我们已经看到过在方法中使用 <code>this</code>，但在这里，<code>this</code> 是指什么呢？</p>
 <p>事实证明，当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 会被设置为新创建的对象！让我们来看看新的 <code>bailey</code> 对象是什么样的：</p>
-<pre><code>{
-  name: Bailey,
-  sayName: function () {
-     console.log(&apos;Meow! My name is &apos; + this.name);
+<pre><code>  {
+    name: Bailey,
+    sayName: function () {
+       console.log(&#39;Meow! My name is &#39; + this.name);
+    }
   }
-}
 </code></pre><p>在以上代码段中，请注意 this 位于构造函数 <strong>外部</strong>。正如我们在上一篇文章中所看到的，当你说 this 时，你其实是在说“这个对象”或“当前对象”。因此，<code>sayName()</code> 方法可以使用 this 来访问该对象的 <code>name</code> 属性！这使得以下方法调用成为可能：</p>
 <pre><code> bailey.sayName();
 
@@ -501,7 +501,7 @@ const bailey = new Cat();
 <p>一个常见的误解是，this 指向定义它的对象。事实并非如此！直到某个对象调用使用 this 的方法，this 才会被赋值。换句话说，赋给 this 的值取决于 调用定义 this 的方法的对象。让我们来看一个例子：</p>
 <pre><code>const dog = {
   bark: function () {
-    console.log(&apos;Woof!&apos;);
+    console.log(&#39;Woof!&#39;);
   },
   barkTwice: function () {
     this.bark();
@@ -522,12 +522,12 @@ dog.barkTwice();
 <li>首先，使用 new 关键字来调用构造函数会将  <code>this</code> 设置为一个新创建的对象。还记得吗，在我们之前创建 <code>Cat()</code> 的实例时，this 被设置为新的 <code>bailey</code> 对象。</li>
 <li>另一方面，调用属于一个对象的函数（即_方法_）会将 <code>this</code> 设置为该对象本身。回想一下前面的示例，<code>dog</code> 对象的 <code>barkTwice</code> 方法能够访问 <code>dog</code> 本身的属性。</li>
 <li><p>第三，单独调用一个函数（即简单地调用一个常规函数）将把 <code>this</code> 设置为 <code>window</code>。如果主机环境是浏览器，则它将是全局对象。</p>
-<pre><code>function funFunction() {
-  return this;
-}
+<pre><code>  function funFunction() {
+    return this;
+  }
 
-funFunction();
-// (返回全局对象, `window`)
+  funFunction();
+  // (返回全局对象, `window`)
 </code></pre></li>
 <li><p>第四种调用函数的方式可以让我们自己设置 this！现在不用在意这一点，我们将在下一部分进行深入探讨。</p>
 </li>
@@ -567,7 +567,7 @@ funFunction();
     this.population = population;
 
     this.identify = function () {
-        console.log(`${this.name}&apos;s population is ${this.population}.`);
+        console.log(`${this.name}&#39;s population is ${this.population}.`);
     };
 }    
 </code></pre><p>当 <code>const sanFrancisco = new City(&#39;San Francisco&#39;, 870000)</code>; 被执行时，<code>this</code> 的值是什么？</p>
@@ -575,22 +575,22 @@ funFunction();
 <blockquote>
 <p>请考虑以下对象 <code>building</code>：</p>
 </blockquote>
-<pre><code>const building = {
-    floors: 5,
-    addFloor: function () {
-        this.floors += 1;
-    }
-    };
+<pre><code>    const building = {
+        floors: 5,
+        addFloor: function () {
+            this.floors += 1;
+        }
+        };
 
-building.addFloor();
+    building.addFloor();
 </code></pre><p>当 <code>building.addFloor()</code> 被执行时，<code>this</code> 的值是什么？</p>
 <p><strong>答案：</strong> <code>building</code></p>
 <blockquote>
 <p>当以下函数被调用时，this 的值是多少？</p>
 </blockquote>
-<pre><code>function myFunction() {
-    console.log(&quot;What is the value of &apos;this&apos;?&quot;);
-}
+<pre><code>    function myFunction() {
+        console.log(&quot;What is the value of &#39;this&#39;?&quot;);
+    }
 </code></pre><p><strong>答案：</strong> <code>window</code></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><hr>
 <p>函数、对象和 <code>this</code> 彼此相互关联。当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 变量会被设置为新创建的对象。当在对象上调用方法时，<code>this</code> 会被设置为该对象本身。当在浏览器环境中调用函数时，<code>this</code> 会被设置为 <code>window</code>，也被称为全局对象。</p>
@@ -729,7 +729,7 @@ building.addFloor();
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -740,7 +740,7 @@ building.addFloor();
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -751,7 +751,7 @@ building.addFloor();
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -896,7 +896,7 @@ building.addFloor();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.8k</span>
+    <span title="Site words total count">18.7k</span>
   
 </div>
 

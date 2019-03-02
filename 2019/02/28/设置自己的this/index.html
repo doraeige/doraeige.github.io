@@ -497,7 +497,7 @@
 <p>当 <code>multiply.call(window, 3, 4)</code>; 执行后，该函数将以 <code>this</code> 的给定值被调用，我们所看到的结果就是 12。在严格模式之外，调用 <code>multiply()</code> 的这两种方式是等价的。</p>
 <p>除了调用常规函数之外，我们如何调用附加到对象上的函数（即方法）呢？这是 <code>call()</code> 真正发挥强大功能的地方。使用 <code>call()</code> 来调用方法允许我们从对象中“借用”方法，然后将其用于另一个对象！请看以下对象 <code>mockingbird</code>：</p>
 <pre><code>const mockingbird = {
-    title: &apos;To Kill a Mockingbird&apos;,
+    title: &#39;To Kill a Mockingbird&#39;,
     describe: function () {
         console.log(`${this.title} is a classic novel`);
     }
@@ -505,14 +505,14 @@
 </code></pre><p>我们可以让 <code>mockingbird</code> 调用自己的 <code>describe()</code> 方法：</p>
 <pre><code>mockingbird.describe();
 
-// &apos;To Kill a Mockingbird is a classic novel&apos;
+// &#39;To Kill a Mockingbird is a classic novel&#39;
 </code></pre><p>但是，借助 <code>call()</code>，以下 <code>pride</code> 对象可以使用 <code>mockingbird</code> 的 <code>describe()</code> 方法：</p>
 <pre><code>const pride = {
-    title: &apos;Pride and Prejudice&apos;
+    title: &#39;Pride and Prejudice&#39;
 };
 
 mockingbird.describe.call(pride);
-// &apos;Pride and Prejudice is a classic novel&apos;
+// &#39;Pride and Prejudice is a classic novel&#39;
 </code></pre><p>让我们来分析一下当 <code>mockingbird.describe.call(pride)</code>; 被执行时，究竟发生了什么！首先，<code>call()</code> 方法被调用到 <code>mockingbird.describe</code>（它指向一个函数）上。然后，<code>this</code> 的值被传递给 <code>call()</code> 方法：<code>pride</code>。</p>
 <p>由于 <code>mockingbird</code> 的 <code>describe()</code> 方法引用了 <code>this.title</code>，我们需要访问 this 所指向的对象的 <code>title</code> 属性。但是，由于我们已经设置了自己的 <code>this</code> 的值，<code>this.title</code> 的值将会从 <code>pride</code> 对象中被访问！结果，<code>mockingbird.describe.call(pride)</code>; 被执行，我们在控制台中看到 <code>&#39;Pride and Prejudice is a classic novel&#39;</code>。</p>
 <p>如果你打算在传递给它的第一个参数的作用域内调用一个函数，那么 <code>call()</code> 是非常有效的。同样，我们可以利用 <code>apply()</code> 方法达到相同的目的，尽管在参数传入的方式上有所不同。让我们来仔细看看！</p>
@@ -528,7 +528,7 @@ mockingbird.describe.call(pride);
 </code></pre><p>然而，使用 <code>apply()</code>，我们则是将 <code>multiply()</code> 函数的所有参数收集到一个数组中，然后再将这个数组传递给 <code>apply()</code>：</p>
 <p>太棒了！那么，使用 <code>apply()</code> 来调用对象的方法，又会怎样呢？请回想一下之前的 <code>mockingbird</code> 和 <code>pride</code> 对象：</p>
 <pre><code>const mockingbird = {
-    title: &apos;To Kill a Mockingbird&apos;,
+    title: &#39;To Kill a Mockingbird&#39;,
     describe: function () {
         console.log(`${this.title} is a classic novel`);
     }
@@ -536,16 +536,16 @@ mockingbird.describe.call(pride);
 
 
 const pride = {
-    title: &apos;Pride and Prejudice&apos;
+    title: &#39;Pride and Prejudice&#39;
 };
 </code></pre><p>之前，我们使用了 <code>call()</code> 来允许 <code>pride</code> 对象”借用” <code>mockingbird</code> 的 <code>describe()</code> 方法：</p>
 <pre><code>mockingbird.describe.call(pride);
 
-// &apos;Pride and Prejudice is a classic novel&apos;
+// &#39;Pride and Prejudice is a classic novel&#39;
 </code></pre><p>我们可以使用 apply() 来达到相同的结果！</p>
 <pre><code>mockingbird.describe.apply(pride);
 
-// &apos;Pride and Prejudice is a classic novel&apos;
+// &#39;Pride and Prejudice is a classic novel&#39;
 </code></pre><p>请注意，传递给 <code>call()</code> 和 <code>apply()</code> 的第一个参数是相同的（即绑定 this 值的对象）。由于 <code>describe()</code> 方法不接受任何参数，因此 <code>mockingbird.describe.call(pride)</code>; 和 <code>mockingbird.describe.apply(pride)</code>; 唯一的区别就是方法！这两种方法都会产生相同的结果。</p>
 <h2 id="偏向选择其中一种方法"><a href="#偏向选择其中一种方法" class="headerlink" title="偏向选择其中一种方法"></a>偏向选择其中一种方法</h2><hr>
 <p><code>call()</code> 和 <code>apply()</code> 都会在其传入的第一个参数（即作为 this 值的对象）的作用域内调用一个函数。那么，你什么时候会偏向于选择 <code>call()</code>，或偏向于选择 <code>apply()</code> 呢？</p>
@@ -554,11 +554,11 @@ const pride = {
 <p>请考虑以下 dave 对象和 sayHello() 函数：</p>
 </blockquote>
 <pre><code>const dave = {
-    name: &apos;Dave&apos;
+    name: &#39;Dave&#39;
 };
 
 function sayHello(message) {
-    console.log(`${message}, ${this.name}. You&apos;re looking well today.`);
+    console.log(`${message}, ${this.name}. You&#39;re looking well today.`);
 }
 </code></pre><p>假设你想将消息 <code>&#39;Hello, Dave. You&#39;re looking well today.&#39;</code> 输出到控制台。你应该编写哪个表达式来达到这个目的？</p>
 <p><strong>参考答案：</strong> sayHello.apply(dave, [‘Hello’]);</p>
@@ -566,7 +566,7 @@ function sayHello(message) {
 <p>请考虑以下 Andrew 和 Richard 对象：</p>
 </blockquote>
 <pre><code>const Andrew = {
-    name: &apos;Andrew&apos;,
+    name: &#39;Andrew&#39;,
     introduce: function () {
         console.log(`Hi, my name is ${this.name}!`);
     }
@@ -574,9 +574,9 @@ function sayHello(message) {
 
 
 const Richard = {
-    name: &apos;Richard&apos;,
+    name: &#39;Richard&#39;,
     introduce: function () {
-        console.log(`Hello there! I&apos;m ${this.name}.`);
+        console.log(`Hello there! I&#39;m ${this.name}.`);
     }
 };
 </code></pre><p>当 <code>Richard.introduce.call(Andrew)</code>; 被执行时，什么会被记录到控制台？</p>
@@ -585,11 +585,11 @@ const Richard = {
 <p>请考虑以下代码：</p>
 </blockquote>
 <pre><code>const andrew = {
-    name: &apos;Andrew&apos;
+    name: &#39;Andrew&#39;
 };
 
 function introduce(language) {
-    console.log(`I&apos;m ${this.name} and my favorite programming language is ${language}.`);
+    console.log(`I&#39;m ${this.name} and my favorite programming language is ${language}.`);
 }
 </code></pre><p>请编写一个表达式，使用 call() 方法产生以下消息：<br><code>&#39;I&#39;m Andrew and my favorite programming language is JavaScript.&#39;</code></p>
 <p><strong>参考答案：</strong> <code>introduce.call(andrew,&#39;JavaScript&#39;)</code></p>
@@ -686,14 +686,14 @@ dog.age;
 <p>请考虑以下 <code>driver</code> 和 <code>car</code> 对象：</p>
 </blockquote>
 <pre><code>const driver = {
-    name: &apos;Danica&apos;,
+    name: &#39;Danica&#39;,
     displayName: function () {
         console.log(`Name: ${this.name}`);
     }
 };
 
 const car = {
-    name: &apos;Fusion&apos;
+    name: &#39;Fusion&#39;
 };
 </code></pre><p>请使用 <code>bind()</code> 编写一个表达式，让我们可以从 <code>driver</code> 中”借用” <code>displayName()</code> 方法，以供 <code>car</code> 对象使用。</p>
 <p><strong>参考答案：</strong> <code>driver.displayName.bind(car)</code></p>
@@ -854,7 +854,7 @@ const car = {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -865,7 +865,7 @@ const car = {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -876,7 +876,7 @@ const car = {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1021,7 +1021,7 @@ const car = {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.8k</span>
+    <span title="Site words total count">18.7k</span>
   
 </div>
 
