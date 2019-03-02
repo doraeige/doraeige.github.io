@@ -489,7 +489,7 @@
 <p>如你所知，在尝试搜索一个不存在于某个对象中的属性时，该对象的构造函数的原型是被首先搜索的。请考虑以下具有两个属性 <code>claws</code> 和 <code>diet</code> 的 <code>bear</code> 对象：</p>
 <pre><code>const bear = {
     claws: true,
-    diet: &#39;carnivore&#39;
+    diet: &apos;carnivore&apos;
 };
 </code></pre><p>让我们将以下 <code>PolarBear()</code> 构造函数的 <code>prototype</code> 属性赋为 <code>bear</code>：</p>
 <pre><code>function PolarBear() {
@@ -500,27 +500,27 @@ PolarBear.prototype = bear;
 </code></pre><p>现在，让我们调用 PolarBear() 构造函数来创建一个新的对象，然后给它两个属性：</p>
 <pre><code>const snowball = new PolarBear();
 
-snowball.color = &#39;white&#39;;
+snowball.color = &apos;white&apos;;
 
-snowball.favoriteDrink = &#39;cola&#39;;
+snowball.favoriteDrink = &apos;cola&apos;;
 </code></pre><p><code>snowball</code> 对象目前看起来像这样：</p>
 <pre><code>{
-    color: &#39;white&#39;,
-    favoriteDrink: &#39;cola&#39;
+    color: &apos;white&apos;,
+    favoriteDrink: &apos;cola&apos;
 }
 </code></pre><p>请注意，<code>snowball</code> 只有两个自己的属性：<code>color</code> 和 <code>favoriteDrink</code>。但是，<code>snowball</code> 也可以访问自身并不具有的属性：<code>claws</code> 和 <code>diet</code>：</p>
 <pre><code>console.log(snowball.claws);
 //true
 
 console.log(snowball.diet);
-//&#39;carnivore&#39;
+//&apos;carnivore&apos;
 </code></pre><p>由于 claw 和 diet 都作为 <code>prototype</code> 对象中的属性存在，因此它们会被查找，因为对象被秘密链接到其构造函数的 <code>prototype</code> 属性。</p>
 <p>太棒了！但你可能会想：这个通向 <code>prototype</code> 对象的秘密链接到底是什么呢？当从 <code>PolarBear()</code> 构造函数构造对象之后（如 <code>snowball</code>），这些对象可以立即访问 <code>PolarBear()</code> 的原型中的属性。这究竟是怎么做到的呢？</p>
 <p>事实证明，这个秘密链接是 <code>snowball</code> 的 <code>__proto__</code> 属性（注意每一端有两个下划线）。</p>
 <p><code>__proto__</code> 是构造函数所创建的所有对象（即实例）的一个属性，并直接指向该构造函数的 <code>prototype</code> 对象。让我们来看看它是什么样的！</p>
 <pre><code>console.log(snowball.__proto__);
 
-//{ claws: true, diet: &#39;carnivore&#39; }
+//{ claws: true, diet: &apos;carnivore&apos; }
 </code></pre><p>由于 <code>__proto__</code> 属性所指向的对象与 <code>PolarBear</code> 的原型 <code>bear</code> 相同，因此将它们进行比较会返回 <code>true</code>：</p>
 <pre><code>console.log(snowball.__proto__ === bear);
 
@@ -558,7 +558,7 @@ console.log(snowball.diet);
     this.isCute = true;
 }
 
-const waffle = new GuineaPig(&#39;Waffle&#39;);
+const waffle = new GuineaPig(&apos;Waffle&apos;);
 </code></pre><p><code>waffle.__proto__</code>指向什么？</p>
 <p><strong>参考答案：</strong> <code>GuineaPig.prototype</code></p>
 <blockquote>
@@ -570,10 +570,10 @@ const waffle = new GuineaPig(&#39;Waffle&#39;);
 }
 
 Car.prototype.drive = function () {
-    console.log(&#39;Vroom vroom!&#39;);
+    console.log(&apos;Vroom vroom!&apos;);
 };
 
-const car = new Car(&#39;silver&#39;, 1988);
+const car = new Car(&apos;silver&apos;, 1988);
 </code></pre><p>当 <code>car.drive()</code> 被调用时，会发生什么？</p>
 <p><strong>参考答案：</strong></p>
 <table>
@@ -665,14 +665,14 @@ function Cat (name) {
 // }
 </code></pre><p>现在，我们向 cat 的原型添加一个 使所有 cat 对象都能共享的方法: Meow</p>
 <pre><code>Cat.prototype.meow = function () {
-    console.log(&#39;Meow!&#39;);
+    console.log(&apos;Meow!&apos;);
 };
 
 // f () {
-//    console.log(&#39;Meow!&#39;);
+//    console.log(&apos;Meow!&apos;);
 // }
 </code></pre><p>使用关键字 new 调用 cat 构造函数，并初始化新的 cat 对象 称之为 Bambi：</p>
-<pre><code>const bambi = new Cat(&#39;Bambi&#39;);
+<pre><code>const bambi = new Cat(&apos;Bambi&apos;);
 
 bambi.meow(); // Meow!
 bambi.walk(); // Bambi walks!

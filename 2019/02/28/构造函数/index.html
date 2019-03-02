@@ -479,7 +479,7 @@
 </ul>
 <h1 id="构造函数：结构和语法"><a href="#构造函数：结构和语法" class="headerlink" title="构造函数：结构和语法"></a>构造函数：结构和语法</h1><hr>
 <pre><code>function SoftwareDeveloper() {
-    this.favoriteLanguage = &#39;JavaScript&#39;;
+    this.favoriteLanguage = &apos;JavaScript&apos;;
 }
 </code></pre><p>首先，构造函数并不声明局部变量，而是使用 <code>this</code> 关键字来保存数据。以上函数将为所创建的任何对象添加一个 <code>favoriteLanguage</code> 属性，并为其分配一个默认值 ‘JavaScript’。现在不用太在意构造函数中的 <code>this</code>；只要知道 <code>this</code> 是指在构造函数前面使用 <code>new</code> 关键字创建的新对象即可。我们很快就会详细介绍这个 <code>this</code>！<br>最后一点比较特别的是，这个函数似乎不会返回任何东西！<code>JavaScript</code> 中的构造函数不应该有一个显式的返回值（即使用 <code>return</code> 语句）。</p>
 <h2 id="创建一个新的对象"><a href="#创建一个新的对象" class="headerlink" title="创建一个新的对象"></a>创建一个新的对象</h2><hr>
@@ -488,37 +488,37 @@
 </code></pre><p>我们已经把这个调用的返回值保存到了变量 <code>developer</code> 中。让我们执行 <code>console.log(developer)</code>; 将这个 <code>SoftwareDeveloper</code> 对象记录到控制台：</p>
 <pre><code>console.log(developer); // SoftwareDeveloper {favoriteLanguage: &quot;JavaScript&quot;}
 </code></pre><p>用对象字面量的方式来创建对象，看看有何不同</p>
-<pre><code>let orderDeveloper = { favoriteLanguage: &#39;JavaScript&#39; };
+<pre><code>let orderDeveloper = { favoriteLanguage: &apos;JavaScript&apos; };
 
 otherDeveloper; // { favoriteLanguage: &quot;JavaScript&quot; }
 </code></pre><p>可以看出 与 <code>developer</code> 相比，创建对象的构造函数 <code>SoftwareDeveloper</code> 没有列在Chrome 开发者工具中；<br>在 Chrome 开发者工具中 构造函数通常显示在 {} 前面；<br><code>developer</code> 的构造函数是 <code>SoftwareDeveloper</code>，而 <code>orderDeveloper</code> 的构造函数是 <code>object</code> 构造函数；比较之下，两者原型将有所不同。</p>
 <h2 id="构造函数可以有参数"><a href="#构造函数可以有参数" class="headerlink" title="构造函数可以有参数"></a>构造函数可以有参数</h2><hr>
 <p>与常规函数一样，使用构造函数的一个好处是它们也可以接受参数。让我们更新以上构造函数来接受一个参数，并为其分配 name 属性：</p>
 <pre><code>function SoftwareDeveloper(name) {
-  this.favoriteLanguage = &#39;JavaScript&#39;;
+  this.favoriteLanguage = &apos;JavaScript&apos;;
   this.name = name;
 }
 </code></pre><p>在更新的 <code>SoftwareDeveloper()</code> 函数中，无论传入函数的值是什么，它都将是对象的 <code>name</code> 属性的值。让我们来看看：</p>
-<pre><code>let instructor = new SoftwareDeveloper(&#39;Andrew&#39;);
+<pre><code>let instructor = new SoftwareDeveloper(&apos;Andrew&apos;);
 
 console.log(instructor);
 
-// SoftwareDeveloper { favoriteLanguage: &#39;JavaScript&#39;, name: &#39;Andrew&#39; }
+// SoftwareDeveloper { favoriteLanguage: &apos;JavaScript&apos;, name: &apos;Andrew&apos; }
 </code></pre><p>正如我们在上面看到的，我们可以使用相同的构造函数来创建不同的对象：</p>
-<pre><code>let teacher = new SoftwareDeveloper(&#39;Richard&#39;);
+<pre><code>let teacher = new SoftwareDeveloper(&apos;Richard&apos;);
 
 console.log(teacher);
 
-// SoftwareDeveloper { favoriteLanguage: &#39;JavaScript&#39;, name: &#39;Richard&#39; }
+// SoftwareDeveloper { favoriteLanguage: &apos;JavaScript&apos;, name: &apos;Richard&apos; }
 </code></pre><p>构造函数的好处是，我们可以调用相同的构造函数，创建无数个实例或对象。</p>
 <h2 id="省略-new-运算符"><a href="#省略-new-运算符" class="headerlink" title="省略 new 运算符"></a>省略 new 运算符</h2><hr>
 <p>如果你无意中 <strong>没有</strong> 使用 <code>new</code> 运算符来调用构造函数，会发生什么？</p>
 <pre><code>function SoftwareDeveloper(name) {
-    this.favoriteLanguage = &#39;JavaScript&#39;;
+    this.favoriteLanguage = &apos;JavaScript&apos;;
     this.name = name;
 }
 
-let coder = SoftwareDeveloper(&#39;David&#39;);
+let coder = SoftwareDeveloper(&apos;David&apos;);
 
 console.log(coder);
 // undefined
@@ -529,7 +529,7 @@ console.log(coder);
 <pre><code>function Developer(name){
   this.name = name;
 }
-const dev = new Developer(&#39;Veronkia&#39;);
+const dev = new Developer(&apos;Veronkia&apos;);
 
 typeof dev;  // &quot;object&quot;
 

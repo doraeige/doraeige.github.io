@@ -480,30 +480,17 @@
 <h4 id="题目解读"><a href="#题目解读" class="headerlink" title="题目解读"></a>题目解读</h4><hr>
 <p>输入一个数字类型的参数n，会返回一个包含2到32的数字的数组，数组长度是n(比如你输入数字是2，就会返回数组长度为2的数组); 数组里面的数字用 随机函数 生成，然后还要检查数字是否会重复，也要考虑负数情况等边界条件</p>
 <h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><hr>
-<pre><code>Math.ceil();   //向上取整。
-Math.floor();  //向下取整。
-Math.round();  //四舍五入。
-Math.random(); //0.0 ~ 1.0 之间的一个伪随机数。【包含0不包含1) 比如0.8647578968666494
-</code></pre><pre><code>Math.ceil(Math.random()*10); // 获取从1到10的随机整数 ，取0的概率极小。
-Math.round(Math.random());   //可均衡获取0到1的随机整数。
-Math.floor(Math.random()*10);  //可均衡获取0到9的随机整数。
-Math.round(Math.random()*10);  //基本均衡获取0到10的随机整数，其中获取最小值0和最大值10的几率少一半。
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Math.ceil();   //向上取整。</span><br><span class="line">Math.floor();  //向下取整。</span><br><span class="line">Math.round();  //四舍五入。</span><br><span class="line">Math.random(); //0.0 ~ 1.0 之间的一个伪随机数。【包含0不包含1) 比如0.8647578968666494</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Math.ceil(Math.random()*10); // 获取从1到10的随机整数 ，取0的概率极小。</span><br><span class="line">Math.round(Math.random());   //可均衡获取0到1的随机整数。</span><br><span class="line">Math.floor(Math.random()*10);  //可均衡获取0到9的随机整数。</span><br><span class="line">Math.round(Math.random()*10);  //基本均衡获取0到10的随机整数，其中获取最小值0和最大值10的几率少一半。</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>直接使用 parseInt，parseFloat 或 Number 将一个非数字的值转化为数字时，表达式返回 NaN </p>
 </blockquote>
-<pre><code>&#39;abc&#39; - 3   // NaN
-parseInt(&#39;abc&#39;)  // NaN
-parseFloat(&#39;abc&#39;) // NaN
-Number(&#39;abc&#39;)    // NaN
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&apos;abc&apos; - 3   // NaN</span><br><span class="line">parseInt(&apos;abc&apos;)  // NaN</span><br><span class="line">parseFloat(&apos;abc&apos;) // NaN</span><br><span class="line">Number(&apos;abc&apos;)    // NaN</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>isNaN() 是一个全局方法，它的作用是检查一个值是否能被 Number() 成功转换 。 如果能转换成功，就返回 false，否则返回 true </p>
 </blockquote>
-<pre><code>isNaN(NaN)    // true 不能转换
-isNaN(&#39;123&#39;)   // false 能转换
-isNaN(&#39;abc&#39;)    // true 不能转换
-isNaN(&#39;123ab&#39;)   // true 不能转换
-isNaN(&#39;123.45abc&#39;) // true 不能转换
-</code></pre><h4 id="生成随机数方法总结"><a href="#生成随机数方法总结" class="headerlink" title="生成随机数方法总结"></a>生成随机数方法总结</h4><hr>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">isNaN(NaN)    // true 不能转换</span><br><span class="line">isNaN(&apos;123&apos;)   // false 能转换</span><br><span class="line">isNaN(&apos;abc&apos;)    // true 不能转换</span><br><span class="line">isNaN(&apos;123ab&apos;)   // true 不能转换</span><br><span class="line">isNaN(&apos;123.45abc&apos;) // true 不能转换</span><br></pre></td></tr></table></figure>
+<h4 id="生成随机数方法总结"><a href="#生成随机数方法总结" class="headerlink" title="生成随机数方法总结"></a>生成随机数方法总结</h4><hr>
 <blockquote>
 <p>生成[1,max]的随机数，公式如下：<br>    // max - 期望的最大值<br>    parseInt(Math.random()<em>max,10)+1;<br>    Math.floor(Math.random()</em>max)+1;<br>    Math.ceil(Math.random()*max);</p>
 </blockquote>
@@ -580,8 +567,8 @@ function fn(n){
 }
 
 fn(2); // (2) [15, 11] 随机
-fn(&#39;5&#39;); // (5) [13, 2, 11, 27, 12] 随机
-fn(&#39;3.33&#39;); // []
+fn(&apos;5&apos;); // (5) [13, 2, 11, 27, 12] 随机
+fn(&apos;3.33&apos;); // []
 fn(5.5); // []
 </code></pre><h4 id="延伸"><a href="#延伸" class="headerlink" title="延伸"></a>延伸</h4><p><a href="https://mp.weixin.qq.com/s/tj8PQXk3CpACYUknE0TpyA" target="_blank" rel="noopener">程序员！为什么你的前端工作经验不值钱？</a></p>
 
