@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="媒体查询 响应式网页会基于设备的特征而变化。也就是说，你的响应式网页，需要在不同的设备上应用不同的样式。有几种办法可以有选择性的应用CSS代码，最简单的是 使用 媒体查询。 媒体查询 提供了简单的逻辑方法，来根据不同的设备特征应用不同的样式，比如设备的宽度、高度或者像素比。你可以修改所有内容，从背景图片到页面布局，甚至其他的任何东西。 添加响应式样式很简单，在需要在你的页面里添加另外的样式表，并附">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-03T07:05:37.061Z">
+<meta property="og:updated_time" content="2019-03-03T07:14:08.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(二)">
 <meta name="twitter:description" content="媒体查询 响应式网页会基于设备的特征而变化。也就是说，你的响应式网页，需要在不同的设备上应用不同的样式。有几种办法可以有选择性的应用CSS代码，最简单的是 使用 媒体查询。 媒体查询 提供了简单的逻辑方法，来根据不同的设备特征应用不同的样式，比如设备的宽度、高度或者像素比。你可以修改所有内容，从背景图片到页面布局，甚至其他的任何东西。 添加响应式样式很简单，在需要在你的页面里添加另外的样式表，并附">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  814
+                  1k
                 </span>
               
 
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -503,8 +503,13 @@
 <p>根据你的内容来设置断点</p>
 </blockquote>
 <p>一开始设置断点时，先在电脑浏览器上将窗口尺寸设置到最小，顺便打开 Chrome 的开发者工具，因为当改变窗口时，它会在右上角显示当前窗口的分辨率。接下来慢慢拉大窗口，仔细观察内容，看什么时候它需要断点</p>
-<h3 id="网格布局"><a href="#网格布局" class="headerlink" title="网格布局"></a>网格布局</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank" rel="noopener">网格布局的基本概念</a></p>
+<h2 id="网格布局"><a href="#网格布局" class="headerlink" title="网格布局"></a>网格布局</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank" rel="noopener">网格布局的基本概念</a></p>
 <p>动态网格系统中，有一些动态调整的纵列，当窗口变小时，它们会自动顺延到下一行，有很多不错的范例可供使用，比如 <code>Bootstrap</code> 或者960px 网格布局系统，它们都非常易于使用，并且已经为你做好了一切准备工作。</p>
+<h2 id="弹性框-–-Flexbox"><a href="#弹性框-–-Flexbox" class="headerlink" title="弹性框 – Flexbox"></a>弹性框 – Flexbox</h2><p>Flexbox 是最好用的布局工具之。</p>
+<p>之所以功能强大，是因为它能够自动填充空白区域。如果一个元素周围出现了空白，它会自动填补上，而如果空间变得拥挤，它会缩小，直至占据最小空间</p>
+<h3 id="怎样用-Flexbox-实现设计？"><a href="#怎样用-Flexbox-实现设计？" class="headerlink" title="怎样用 Flexbox 实现设计？"></a>怎样用 Flexbox 实现设计？</h3><ul>
+<li><code>display: flex</code><br>  flex 的默认堆放方式为 横向堆放；默认情况下 flex 项目会自动填充在一行内，所以无论将元素的宽度设为多少，它们都不会换行。相反，浏览器将其大小适应在视窗内，要改变这些，可以为元素添加 <code>flex-wrap:wrap</code> 语句，这是在告诉浏览器，可以允许内部的元素换行。</li>
+</ul>
 
       
     </div>
@@ -768,7 +773,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体查询"><span class="nav-number">1.</span> <span class="nav-text">媒体查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#断点"><span class="nav-number">2.</span> <span class="nav-text">断点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要在哪设置断点？"><span class="nav-number">2.1.</span> <span class="nav-text">要在哪设置断点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网格布局"><span class="nav-number">2.2.</span> <span class="nav-text">网格布局</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体查询"><span class="nav-number">1.</span> <span class="nav-text">媒体查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#断点"><span class="nav-number">2.</span> <span class="nav-text">断点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要在哪设置断点？"><span class="nav-number">2.1.</span> <span class="nav-text">要在哪设置断点？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网格布局"><span class="nav-number">3.</span> <span class="nav-text">网格布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性框-–-Flexbox"><span class="nav-number">4.</span> <span class="nav-text">弹性框 – Flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#怎样用-Flexbox-实现设计？"><span class="nav-number">4.1.</span> <span class="nav-text">怎样用 Flexbox 实现设计？</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -804,7 +809,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.8k</span>
+    <span title="Site words total count">21k</span>
   
 </div>
 
