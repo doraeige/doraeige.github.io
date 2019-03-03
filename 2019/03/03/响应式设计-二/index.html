@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="媒体查询 响应式网页会基于设备的特征而变化。也就是说，你的响应式网页，需要在不同的设备上应用不同的样式。有几种办法可以有选择性的应用CSS代码，最简单的是 使用 媒体查询。 媒体查询 提供了简单的逻辑方法，来根据不同的设备特征应用不同的样式，比如设备的宽度、高度或者像素比。你可以修改所有内容，从背景图片到页面布局，甚至其他的任何东西。 添加响应式样式很简单，在需要在你的页面里添加另外的样式表，并附">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-03T06:38:17.703Z">
+<meta property="og:updated_time" content="2019-03-03T07:05:37.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(二)">
 <meta name="twitter:description" content="媒体查询 响应式网页会基于设备的特征而变化。也就是说，你的响应式网页，需要在不同的设备上应用不同的样式。有几种办法可以有选择性的应用CSS代码，最简单的是 使用 媒体查询。 媒体查询 提供了简单的逻辑方法，来根据不同的设备特征应用不同的样式，比如设备的宽度、高度或者像素比。你可以修改所有内容，从背景图片到页面布局，甚至其他的任何东西。 添加响应式样式很简单，在需要在你的页面里添加另外的样式表，并附">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  379
+                  814
                 </span>
               
 
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -492,6 +492,19 @@
 <li>如果使用 CSS链接，你会有很多小文件，但是很多 HTTP 请求</li>
 <li>如果使用 <code>@media</code>，HTTP 请求 会少一些，但是文件都会变大</li>
 </ul>
+<p>响应式网页设计中，最常用的媒体查询变量是 <code>min-width</code> 和 <code>max-width</code>;<br><code>max-width</code> 的规则是在视窗宽度小于其赋值时生效。<code>min-width</code>的规则是在视窗宽度大于其赋值时生效。</p>
+<p>你还可以创建基于 <code>min-device-width</code> 或者 <code>max-device-width</code> 的媒体查询，但是这十分不推荐，它们的区别很细微，但却很重要。</p>
+<p><code>min-width</code> 是基于浏览器窗口大小的；<code>min-device-width</code> 是基于屏幕大小的；额外添加 <code>device-width</code> 变量可以防止在电脑或其他桌面设备上的网页内容 随窗口大小 而变化，因为这样的媒体查询是基于真实设备的尺寸的，而非浏览器窗口；另外一个原因是 一些浏览器 比如 Legacy 安卓浏览器可能返回错误的设备值。</p>
+<h2 id="断点"><a href="#断点" class="headerlink" title="断点"></a>断点</h2><hr>
+<blockquote>
+<p>页面改变布局的那个点叫断点</p>
+</blockquote>
+<h3 id="要在哪设置断点？"><a href="#要在哪设置断点？" class="headerlink" title="要在哪设置断点？"></a>要在哪设置断点？</h3><blockquote>
+<p>根据你的内容来设置断点</p>
+</blockquote>
+<p>一开始设置断点时，先在电脑浏览器上将窗口尺寸设置到最小，顺便打开 Chrome 的开发者工具，因为当改变窗口时，它会在右上角显示当前窗口的分辨率。接下来慢慢拉大窗口，仔细观察内容，看什么时候它需要断点</p>
+<h3 id="网格布局"><a href="#网格布局" class="headerlink" title="网格布局"></a>网格布局</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank" rel="noopener">网格布局的基本概念</a></p>
+<p>动态网格系统中，有一些动态调整的纵列，当窗口变小时，它们会自动顺延到下一行，有很多不错的范例可供使用，比如 <code>Bootstrap</code> 或者960px 网格布局系统，它们都非常易于使用，并且已经为你做好了一切准备工作。</p>
 
       
     </div>
@@ -755,7 +768,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体查询"><span class="nav-number">1.</span> <span class="nav-text">媒体查询</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体查询"><span class="nav-number">1.</span> <span class="nav-text">媒体查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#断点"><span class="nav-number">2.</span> <span class="nav-text">断点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要在哪设置断点？"><span class="nav-number">2.1.</span> <span class="nav-text">要在哪设置断点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网格布局"><span class="nav-number">2.2.</span> <span class="nav-text">网格布局</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -791,7 +804,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.4k</span>
+    <span title="Site words total count">20.8k</span>
   
 </div>
 
