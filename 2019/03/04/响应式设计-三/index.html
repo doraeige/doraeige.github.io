@@ -156,7 +156,8 @@
 <meta property="og:image" content="http://yoursite.com/images/css15.png">
 <meta property="og:image" content="http://yoursite.com/images/css16.png">
 <meta property="og:image" content="http://yoursite.com/images/css17.png">
-<meta property="og:updated_time" content="2019-03-04T09:59:25.687Z">
+<meta property="og:image" content="http://yoursite.com/images/css18.png">
+<meta property="og:updated_time" content="2019-03-04T10:04:39.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(三)">
 <meta name="twitter:description" content="响应模式 响应模式的变化是快的，但是也有一些确定的模式，能在几乎任何设备上都有不错的表现。 响应式网页布局可以大致分为四种模式：  大体流动模型(Mostly Fluid) 掉落列模型(Column Drop) 活动布局模型(Layout Shifter) 画布溢出模型(Off Canvas)  有时，一个网页同时结合几种模式，例如 掉落列和画布溢出模型。以下部分将会讲解每种模式是怎样工作的，然后">
@@ -450,7 +451,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.8k
                 </span>
               
 
@@ -466,7 +467,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -557,8 +558,14 @@
 <p>记住 每个元素的默认次序数是 <strong>0</strong></p>
 </blockquote>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">600px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.dark_blue</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">        <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-id">#container2</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.red</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">        <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>让我们在浏览器上看看效果，是不是很棒呢</p>
-
+<p>让我们在浏览器上看看效果，是不是很棒呢！</p>
+<h3 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h3><hr>
+<blockquote>
+<p>如图所示，在为红色、绿色和深蓝色的元素中，哪个 div 相对应哪个元素？ 在下方的文本框里，请写出它们对应的 id。你的选项分别是 boxA、boxB 和 boxC.</p>
+</blockquote>
+<p><img src="/images/css18.png" alt="活动布局模型"></p>
+<p><strong>答案：</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Red Box (红色框） -----  boxA</span><br><span class="line">Green Box ( 绿色框）-----  boxC</span><br><span class="line">Dark Blue Box ( 深蓝色框 ) ----- boxB</span><br></pre></td></tr></table></figure></p>
+<h2 id="画布溢出模型-Off-Canvas"><a href="#画布溢出模型-Off-Canvas" class="headerlink" title="画布溢出模型(Off Canvas)"></a>画布溢出模型(Off Canvas)</h2>
       
     </div>
     
@@ -821,7 +828,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应模式"><span class="nav-number">1.</span> <span class="nav-text">响应模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#掉落列模型-Column-Drop"><span class="nav-number">2.</span> <span class="nav-text">掉落列模型(Column Drop)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现"><span class="nav-number">2.1.</span> <span class="nav-text">如何实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一阶段"><span class="nav-number">2.1.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二阶段"><span class="nav-number">2.1.2.</span> <span class="nav-text">第二阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三阶段"><span class="nav-number">2.1.3.</span> <span class="nav-text">第三阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大体流动模型-Mostly-Fluid"><span class="nav-number">3.</span> <span class="nav-text">大体流动模型(Mostly Fluid)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现-1"><span class="nav-number">3.1.</span> <span class="nav-text">如何实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一阶段-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二阶段-1"><span class="nav-number">3.1.2.</span> <span class="nav-text">第二阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三阶段-1"><span class="nav-number">3.1.3.</span> <span class="nav-text">第三阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四阶段"><span class="nav-number">3.1.4.</span> <span class="nav-text">第四阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动布局模型-Layout-Shifter"><span class="nav-number">4.</span> <span class="nav-text">活动布局模型(Layout Shifter)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一阶段-2"><span class="nav-number">4.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二阶段-2"><span class="nav-number">4.2.</span> <span class="nav-text">第二阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三阶段-2"><span class="nav-number">4.3.</span> <span class="nav-text">第三阶段</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应模式"><span class="nav-number">1.</span> <span class="nav-text">响应模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#掉落列模型-Column-Drop"><span class="nav-number">2.</span> <span class="nav-text">掉落列模型(Column Drop)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现"><span class="nav-number">2.1.</span> <span class="nav-text">如何实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一阶段"><span class="nav-number">2.1.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二阶段"><span class="nav-number">2.1.2.</span> <span class="nav-text">第二阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三阶段"><span class="nav-number">2.1.3.</span> <span class="nav-text">第三阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大体流动模型-Mostly-Fluid"><span class="nav-number">3.</span> <span class="nav-text">大体流动模型(Mostly Fluid)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现-1"><span class="nav-number">3.1.</span> <span class="nav-text">如何实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一阶段-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二阶段-1"><span class="nav-number">3.1.2.</span> <span class="nav-text">第二阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三阶段-1"><span class="nav-number">3.1.3.</span> <span class="nav-text">第三阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四阶段"><span class="nav-number">3.1.4.</span> <span class="nav-text">第四阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动布局模型-Layout-Shifter"><span class="nav-number">4.</span> <span class="nav-text">活动布局模型(Layout Shifter)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一阶段-2"><span class="nav-number">4.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二阶段-2"><span class="nav-number">4.2.</span> <span class="nav-text">第二阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三阶段-2"><span class="nav-number">4.3.</span> <span class="nav-text">第三阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">4.4.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画布溢出模型-Off-Canvas"><span class="nav-number">5.</span> <span class="nav-text">画布溢出模型(Off Canvas)</span></a></li></ol></div>
             
 
           </div>
@@ -857,7 +864,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">23k</span>
+    <span title="Site words total count">23.1k</span>
   
 </div>
 
