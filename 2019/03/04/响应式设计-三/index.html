@@ -145,12 +145,14 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/css5.png">
 <meta property="og:image" content="http://yoursite.com/images/css6.png">
+<meta property="og:image" content="http://yoursite.com/images/css11.png">
+<meta property="og:image" content="http://yoursite.com/images/css12.png">
 <meta property="og:image" content="http://yoursite.com/images/css7.png">
 <meta property="og:image" content="http://yoursite.com/images/css8.png">
 <meta property="og:image" content="http://yoursite.com/images/css9.png">
 <meta property="og:image" content="http://yoursite.com/images/css10.png">
 <meta property="og:image" content="http://yoursite.com/images/css10.png">
-<meta property="og:updated_time" content="2019-03-04T05:10:58.821Z">
+<meta property="og:updated_time" content="2019-03-04T05:13:54.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(三)">
 <meta name="twitter:description" content="响应模式 响应模式的变化是快的，但是也有一些确定的模式，能在几乎任何设备上都有不错的表现。 响应式网页布局可以大致分为四种模式：  大体流动模型(Mostly Fluid) 掉落列模型(Column Drop) 活动布局模型(Layout Shifter) 画布溢出模型(Off Canvas)  有时，一个网页同时结合几种模式，例如 掉落列和画布溢出模型。以下部分将会讲解每种模式是怎样工作的，然后">
@@ -496,16 +498,18 @@
 <p><img src="/images/css5.png" alt="掉落列模型"></p>
 <p>在视窗最窄的时候，每个元素都纵向堆放，一个接着一个；当视窗变宽，元素也随之延展，直至到达第一个断点；在第一个断点，所有元素不再竖直堆放，而是前两个元素并排显示，第三个元素在它们下面，这些元素会继续随着视窗而延展，直至到达下一个断点，接着，它们会重排成一个三列布局，通常，当视窗到达最大宽度，列也到达最大宽度，然后它们便不再随视窗而延展，而是在两侧添加外边距。</p>
 <h3 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h3><hr>
-<p><img src="/images/css6.png" alt="掉落列模型"></p>
 <h4 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h4><p>从最小的视图开始，我们现在有三个 <code>div</code> 标签，包含在一个 <code>container</code> 标签里</p>
+<p><img src="/images/css6.png" alt="掉落列模型"></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box dark_blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box light_blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box green"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>添加相应的 <code>css</code> 属性，将所有的元素宽度设为 <code>100%</code>:</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="第二阶段"><a href="#第二阶段" class="headerlink" title="第二阶段"></a>第二阶段</h4><p>因为这是个例子，我就随机的将断点设为 <code>450px</code>。</p>
+<p><img src="/images/css11.png" alt="掉落列模型"></p>
 <p>我想让这个 <strong>深蓝的div</strong> 占据视窗宽度的 <strong>25%</strong>，这个 <strong>浅蓝色的div</strong> 占据 <strong>75%</strong>，然后我将 <strong>绿色的div</strong> 占据整个视窗。</p>
 <p>为了实现这些，我需要添加一个新的 <strong>媒体查询</strong> 来检查，视窗宽度是否大于等于 <code>450px</code>，然后将 <strong>深蓝的div</strong> 的宽度 设为 <strong>25%</strong>，<strong>浅蓝色的div</strong> 的宽度 设为 <strong>75%</strong>。</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">450px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.dark_blue</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.light_blue</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">75%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="第三阶段"><a href="#第三阶段" class="headerlink" title="第三阶段"></a>第三阶段</h4><p>我要在 550px 添加第二个断点，然后让 <strong>深蓝的div</strong> 为 <strong>25%</strong>，<strong>浅蓝色的div</strong> 为 <strong>50%</strong>， <strong>绿色的div</strong> 为 <strong>25%</strong>，为了实现这些，我需要添加一个新的 <strong>媒体查询</strong> 来检查是否屏幕媒体且最小宽度为 <code>550px</code>。</p>
+<h4 id="第三阶段"><a href="#第三阶段" class="headerlink" title="第三阶段"></a>第三阶段</h4><p><img src="/images/css12.png" alt="掉落列模型"></p>
+<p>在 550px 添加第二个断点，然后让 <strong>深蓝的div</strong> 为 <strong>25%</strong>，<strong>浅蓝色的div</strong> 为 <strong>50%</strong>， <strong>绿色的div</strong> 为 <strong>25%</strong>，为了实现这些，我需要添加一个新的 <strong>媒体查询</strong>。</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">550px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.dark_blue</span>, <span class="selector-class">.green</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.light_blue</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>完成！可以在浏览器中查看效果。</p>
 <h2 id="大体流动模型-Mostly-Fluid"><a href="#大体流动模型-Mostly-Fluid" class="headerlink" title="大体流动模型(Mostly Fluid)"></a>大体流动模型(Mostly Fluid)</h2><hr>
@@ -513,8 +517,8 @@
 <p><img src="/images/css7.png" alt="大体流动模型"></p>
 <p>在视窗宽度最窄时，与 <strong>掉落列模型(Column Drop)</strong> 一样，为竖直堆放布局；但是随着视窗变宽，网格模型开始出现，最终，当视窗宽度到达最大宽度，两边会出现外边距，而内容不再延展。</p>
 <h3 id="如何实现-1"><a href="#如何实现-1" class="headerlink" title="如何实现"></a>如何实现</h3><hr>
-<p><img src="/images/css8.png" alt="大体流动模型"></p>
-<h4 id="第一阶段-1"><a href="#第一阶段-1" class="headerlink" title="第一阶段"></a>第一阶段</h4><p>我把这个网页做的复杂一点，加了几个 <code>div</code>。</p>
+<h4 id="第一阶段-1"><a href="#第一阶段-1" class="headerlink" title="第一阶段"></a>第一阶段</h4><p><img src="/images/css8.png" alt="大体流动模型"></p>
+<p>我把这个网页做的复杂一点，加了几个 <code>div</code>。</p>
 <p>从最小的视图开始，我们现在有五个 <code>div</code> 标签，包含在一个 <code>container</code> 标签里</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box dark_blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box light_blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box green"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box red"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box orange"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>与 <strong>掉落列模型(Column Drop)</strong> 一样，我需要用 <code>flexbox</code>，并在最窄视窗时，将所有的元素宽度设为 <code>100%</code>:</p>
