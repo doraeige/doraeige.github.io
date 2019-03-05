@@ -102,17 +102,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F02%2F26%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post$ hexo new "My New Post" More info: Writing Run server$ hexo server More info: Server Generate static files$ hexo generate More info: Generating Deploy to remote sites$ hexo deploy More info: Deployment Multiple hexo personalization settingsMore info: settings]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[响应式设计(四)]]></title>
     <url>%2F2018%2F05%2F05%2F%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1-%E5%9B%9B%2F</url>
     <content type="text"><![CDATA[图片 一图胜千言，而且图片是每个网站的重要组成部分。 每个页面的 HTTP 文档大约有 1.2MB 的图片。这意味着图片占据每个网页的 65% 的体积。 设计响应式网页时，我们需要把图片考虑进去。 自适应网页设计 其余时候，图像也许需要更大幅度的修改：更改比例、裁剪甚至更换整个图像。 在这种情况下，更改图像通常称作艺术指导 实例 下一节，具体说明 响应式图片 处理。 表格 表格有很多花样，如果表格的列超过一定数量，那么它很有可能会溢出视窗。小屏幕会从产生水平滚动条。这里有三种方式可以解决： 隐藏某些列 取消表格样式 封闭表格，例如转折点 隐藏某些列 当视窗尺寸缩小时，隐藏纵列实质上是根据它们的重要性来进行的。让我们来看看一个棒球计分板的做法： Demo 在这个例子，从小屏幕开始，什么信息最重要？短队名 和 最终得分，使用不显示的属性来隐藏所有其他东西。 body &#123; margin: 1em;&#125;.longName &#123; display: none;&#125;.inning&#123; display: none;&#125; 然后随着视窗尺寸变大，显示出长队名，接着开始显示每局的得分。隐藏纵列最大的问题是你在向用户隐瞒内容，如果我需要知道狄启菊有多少得分怎么办？如果我用一个狭窄屏幕的设备，它就不见了，所以使用这些技术的时候要注意，如果可能，请使用 缩写 而不是完全隐藏它。 取消表格样式 用这种方式，当视窗宽度小于一定值的时候，表格会瓦解重组成长列表，与数据表很不同，这种技术的好处是所有的数据，都是可见的，不管视窗的尺寸是多大。让我们看一下案例。 Demo 当视窗变小时，表格瓦解。每个纵列实际上变成独立一行，表头在旁边。使用 媒体查询 我需要告诉表格 当视窗小于一定宽度，这里是500px，我不想让它表现得像一个表格，所以强制 所有的表格、表头元素、表格主体执行块级显示。 @media screen and (max-width: 500px) &#123; table, thead, tbody, th, td, tr &#123; display: block; &#125; /* 移除thead 里的tr */ thead tr &#123; position: absolute; top: -9999px; left: -9999px; &#125; td &#123; position: relative; padding-left: 50%; &#125; td:before &#123; position: absolute; left: 6px; content: attr(data-th); font-weight: bold; &#125; td:first-of-type &#123; font-weight: bold; &#125;&#125; 值得注意的是，我可以设置不显示 thead tr，但是那会对使用屏幕阅读器的人引起可访问性问题，因为浏览器不会告诉它们表格标题，相反，我将内容置于屏幕之外。 为了添加行的标签，使用前置伪选择器 td:before，我用 content: attr(data-th) 来设置使得 data-th 的值应用到每个 td 元素。 表格内滚动 为了把表格放在视窗里，其中一个你可以做的最简单的事情，就是把它放在一个 div 里面，然后设置宽度为 100%，接着设置 overflow-x:auto；然后，与其溢出视窗，表格会占据同样的宽度。但是可以用滚动条在视窗里拉动。 Demo]]></content>
@@ -158,6 +147,17 @@
       <tags>
         <tag>响应式</tag>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F03%2F05%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post$ hexo new "My New Post" More info: Writing Run server$ hexo server More info: Server Generate static files$ hexo generate More info: Generating Deploy to remote sites$ hexo deploy More info: Deployment Multiple hexo personalization settingsMore info: settings]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
