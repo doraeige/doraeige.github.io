@@ -160,7 +160,7 @@
 <meta property="og:image" content="http://yoursite.com/images/css19.png">
 <meta property="og:image" content="http://yoursite.com/images/css20.png">
 <meta property="og:image" content="http://yoursite.com/images/css21.png">
-<meta property="og:updated_time" content="2019-03-05T08:06:16.157Z">
+<meta property="og:updated_time" content="2019-03-05T08:07:38.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(三)">
 <meta name="twitter:description" content="响应模式 响应模式的变化是快的，但是也有一些确定的模式，能在几乎任何设备上都有不错的表现。 响应式网页布局可以大致分为四种模式：  大体流动模型(Mostly Fluid) 掉落列模型(Column Drop) 活动布局模型(Layout Shifter) 画布溢出模型(Off Canvas)  有时，一个网页同时结合几种模式，例如 掉落列和画布溢出模型。以下部分将会讲解每种模式是怎样工作的，然后">
@@ -586,7 +586,8 @@
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">600px</span>) &#123;</span><br><span class="line">    <span class="selector-tag">nav</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: relative;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(0, 0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: flex;</span><br><span class="line">        <span class="attribute">flex-flow</span>: row nowrap;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">main</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: auto;</span><br><span class="line">        <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里是用于切换 open 类的 JavaScript：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">menu.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    drawer.classList.toggle(<span class="string">'open'</span>);</span><br><span class="line">    e.stopPropagation();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>让我们在浏览器上看看效果，是不是很棒呢！<br><a href="http://htmlpreview.github.io/?https://github.com/doraeige/tests/blob/master/off-canvas/pattern-off-canvas.html" target="_blank" rel="noopener">画布溢出模型</a></p>
+<p><strong>源码：</strong><br><a href="http://htmlpreview.github.io/?https://github.com/doraeige/tests/blob/master/off-canvas/pattern-off-canvas.html" target="_blank" rel="noopener">画布溢出模型</a></p>
+<p>让我们在浏览器上看看效果，是不是很棒呢！</p>
 <h5 id="延展"><a href="#延展" class="headerlink" title="延展"></a>延展</h5><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model/Examples#Example_5:_Event_Propagation" target="_blank" rel="noopener">e.stopPropagation()</a></p>
 <p><a href="https://github.com/doraeige/doraeige.github.io/blob/master/html/pattern-off-canvas.html" target="_blank" rel="noopener">画布溢出模型源码 365行 - 485行</a></p>
 <h3 id="小练习-1"><a href="#小练习-1" class="headerlink" title="小练习"></a>小练习</h3><hr>
