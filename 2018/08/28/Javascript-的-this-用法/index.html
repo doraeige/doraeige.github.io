@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="Constructor,Object,">
+  <meta name="keywords" content="this,">
 
 
 
@@ -135,18 +135,18 @@
 
 
 
-<meta name="description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
-<meta name="keywords" content="Constructor,Object">
+<meta name="description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
+<meta name="keywords" content="this">
 <meta property="og:type" content="article">
-<meta property="og:title" content="构造函数">
-<meta property="og:url" content="http://yoursite.com/2019/02/28/构造函数/index.html">
+<meta property="og:title" content="Javascript 的 this 用法">
+<meta property="og:url" content="http://yoursite.com/2018/08/28/Javascript-的-this-用法/index.html">
 <meta property="og:site_name" content="hey,Sophia!">
-<meta property="og:description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
+<meta property="og:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-02T08:44:18.150Z">
+<meta property="og:updated_time" content="2019-03-05T10:09:08.854Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="构造函数">
-<meta name="twitter:description" content="创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 this。  要实例化（即 创建 ）一个新的对象，我们可以使用 new 运算符来调用这个函数：new SoftwareDeveloper()">
+<meta name="twitter:title" content="Javascript 的 this 用法">
+<meta name="twitter:description" content="this 是 JavaScript 语言的一个关键字。 构造函数中的 this 在上一部分，我们使用了方法中的 this 来访问该方法所属的 对象。让我们再来看一个例子： function Cat(name) &amp;#123;  this.name = name  this.lives = 9;  this.sayName = function () &amp;#123;    console.log( &apos;M">
 
 
 
@@ -176,13 +176,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/28/构造函数/">
+  <link rel="canonical" href="http://yoursite.com/2018/08/28/Javascript-的-this-用法/">
 
 
 
 
 
-  <title>构造函数 | hey,Sophia!</title>
+  <title>Javascript 的 this 用法 | hey,Sophia!</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/构造函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/Javascript-的-this-用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoyaliu">
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">构造函数</h1>
+          <h1 class="post-title" itemprop="name headline">Javascript 的 this 用法</h1>
         
 
         <div class="post-meta">
@@ -382,8 +382,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-28T11:22:12+08:00">
-                2019-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T19:40:13+08:00">
+                2018-08-28
               </time>
             
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  1.2k
                 </span>
               
 
@@ -473,43 +473,79 @@
       
 
       
-        <p>创建对象的一个重要方式是使用构造函数，构造函数以大写字母开头，构造函数必须始终使用特殊关键字 new 来调用，<br>与普通函数的区别是：普通函数必须创建将返回的对象并直接修改该对象，而构造函数会自动创建对象，<br>然后，为了向此对象中添加属性或方法，需要使用特殊的关键字 <code>this</code>。</p>
+        <p><code>this</code> 是 JavaScript 语言的一个关键字。</p>
+<h3 id="构造函数中的-this"><a href="#构造函数中的-this" class="headerlink" title="构造函数中的 this"></a>构造函数中的 this</h3><hr>
+<p>在上一部分，我们使用了方法中的 <code>this</code> 来访问该方法所属的 <strong>对象</strong>。让我们再来看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.lives = <span class="number">9</span>;</span><br><span class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'Meow! My name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bailey = <span class="keyword">new</span> Cat();</span><br></pre></td></tr></table></figure>
+<p>在上面的 <code>Cat()</code> 构造函数中，<code>sayName</code> 所指向的函数引用了 <code>this.name</code>。之前，我们已经看到过在方法中使用 <code>this</code>，但在这里，<code>this</code> 是指什么呢？</p>
+<p>事实证明，当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 会被设置为新创建的对象！让我们来看看新的 <code>bailey</code> 对象是什么样的：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    name: Bailey,</span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Meow! My name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在以上代码段中，请注意 this 位于构造函数 <strong>外部</strong>。正如我们在上一篇文章中所看到的，当你说 this 时，你其实是在说“这个对象”或“当前对象”。因此，<code>sayName()</code> 方法可以使用 this 来访问该对象的 <code>name</code> 属性！这使得以下方法调用成为可能：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">bailey.sayName();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Meow! My name is Bailey</span></span><br></pre></td></tr></table></figure>
+<h2 id="this-什么时候会被赋值？"><a href="#this-什么时候会被赋值？" class="headerlink" title="this 什么时候会被赋值？"></a>this 什么时候会被赋值？</h2><hr>
+<p>一个常见的误解是，this 指向定义它的对象。事实并非如此！直到某个对象调用使用 this 的方法，this 才会被赋值。换句话说，赋给 this 的值取决于 调用定义 this 的方法的对象。让我们来看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> dog = &#123;</span><br><span class="line">  bark: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Woof!'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  barkTwice: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.bark();</span><br><span class="line">    <span class="keyword">this</span>.bark();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>让我们继续调用 <code>dog</code> 的两个方法：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">dog.bark();</span><br><span class="line"><span class="comment">// Woof!</span></span><br><span class="line"></span><br><span class="line">dog.barkTwice();</span><br><span class="line"><span class="comment">// Woof!</span></span><br><span class="line"><span class="comment">// Woof!</span></span><br></pre></td></tr></table></figure>
+<p>我们知道，当我们调用 <code>dog.bark()</code> 或 <code>dog.barkTwice()</code> 时，变量 <code>this</code> 将被设置。由于 <code>this</code> 可以访问调用它的对象，因此 <code>barkTwice</code> 可以使用 this 来访问包含 <code>bark</code> 方法的 <code>dog</code> 对象。<br>但是，如果我们在 <code>barkTwice</code> 中使用 <code>bark()</code>，而不是 <code>this.bark()</code>，将会怎样？该函数会先在 <code>barkTwice</code> 的作用域内查找一个名为 <code>bark</code> 的局部变量。如果没有找到 <code>bark</code>，则会沿着作用域链继续查找。<br>综合来看：<code>this.bark()</code> 会告诉 <code>barkTwice</code> 查看 <code>dog</code>（调用该方法的对象）以查找 <code>bark</code>。</p>
+<h2 id="this-会被设置为什么？"><a href="#this-会被设置为什么？" class="headerlink" title="this 会被设置为什么？"></a>this 会被设置为什么？</h2><hr>
+<p>到目前为止，我们已经在许多不同的上下文中看到了 <code>this</code>，比如在方法中，或被构造函数引用。现在，让我们把它们放在一起来看一下！<br>有四种方式可以调用函数，而每种方式都会不同地设置 <code>this</code>。</p>
 <ul>
-<li>要实例化（即 创建 ）一个新的对象，我们可以使用 <code>new</code> 运算符来调用这个函数：<br><code>new SoftwareDeveloper()</code>;</li>
+<li>首先，使用 new 关键字来调用构造函数会将  <code>this</code> 设置为一个新创建的对象。还记得吗，在我们之前创建 <code>Cat()</code> 的实例时，this 被设置为新的 <code>bailey</code> 对象。</li>
+<li>另一方面，调用属于一个对象的函数（即_方法_）会将 <code>this</code> 设置为该对象本身。回想一下前面的示例，<code>dog</code> 对象的 <code>barkTwice</code> 方法能够访问 <code>dog</code> 本身的属性。</li>
+<li>第三，单独调用一个函数（即简单地调用一个常规函数）将把 <code>this</code> 设置为 <code>window</code>。如果主机环境是浏览器，则它将是全局对象。</li>
 </ul>
-<h1 id="构造函数：结构和语法"><a href="#构造函数：结构和语法" class="headerlink" title="构造函数：结构和语法"></a>构造函数：结构和语法</h1><hr>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SoftwareDeveloper</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.favoriteLanguage = <span class="string">'JavaScript'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先，构造函数并不声明局部变量，而是使用 <code>this</code> 关键字来保存数据。以上函数将为所创建的任何对象添加一个 <code>favoriteLanguage</code> 属性，并为其分配一个默认值 ‘JavaScript’。现在不用太在意构造函数中的 <code>this</code>；只要知道 <code>this</code> 是指在构造函数前面使用 <code>new</code> 关键字创建的新对象即可。我们很快就会详细介绍这个 <code>this</code>！<br>最后一点比较特别的是，这个函数似乎不会返回任何东西！<code>JavaScript</code> 中的构造函数不应该有一个显式的返回值（即使用 <code>return</code> 语句）。</p>
-<h2 id="创建一个新的对象"><a href="#创建一个新的对象" class="headerlink" title="创建一个新的对象"></a>创建一个新的对象</h2><hr>
-<p>正如我们在上面看到的，让我们使用 new 运算符来创建一个新的对象：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> developer = <span class="keyword">new</span> SoftwareDeveloper();</span><br></pre></td></tr></table></figure>
-<p>我们已经把这个调用的返回值保存到了变量 <code>developer</code> 中。让我们执行 <code>console.log(developer)</code>; 将这个 <code>SoftwareDeveloper</code> 对象记录到控制台：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(developer); <span class="comment">// SoftwareDeveloper &#123;favoriteLanguage: "JavaScript"&#125;</span></span><br></pre></td></tr></table></figure>
-<p>用对象字面量的方式来创建对象，看看有何不同</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> orderDeveloper = &#123; <span class="attr">favoriteLanguage</span>: <span class="string">'JavaScript'</span> &#125;;</span><br><span class="line"></span><br><span class="line">otherDeveloper; <span class="comment">// &#123; favoriteLanguage: "JavaScript" &#125;</span></span><br></pre></td></tr></table></figure>
-<p>可以看出 与 <code>developer</code> 相比，创建对象的构造函数 <code>SoftwareDeveloper</code> 没有列在Chrome 开发者工具中；<br>在 Chrome 开发者工具中 构造函数通常显示在 {} 前面；<br><code>developer</code> 的构造函数是 <code>SoftwareDeveloper</code>，而 <code>orderDeveloper</code> 的构造函数是 <code>object</code> 构造函数；比较之下，两者原型将有所不同。</p>
-<h2 id="构造函数可以有参数"><a href="#构造函数可以有参数" class="headerlink" title="构造函数可以有参数"></a>构造函数可以有参数</h2><hr>
-<p>与常规函数一样，使用构造函数的一个好处是它们也可以接受参数。让我们更新以上构造函数来接受一个参数，并为其分配 name 属性：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SoftwareDeveloper</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.favoriteLanguage = <span class="string">'JavaScript'</span>;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在更新的 <code>SoftwareDeveloper()</code> 函数中，无论传入函数的值是什么，它都将是对象的 <code>name</code> 属性的值。让我们来看看：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> instructor = <span class="keyword">new</span> SoftwareDeveloper(<span class="string">'Andrew'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(instructor);</span><br><span class="line"></span><br><span class="line"><span class="comment">// SoftwareDeveloper &#123; favoriteLanguage: 'JavaScript', name: 'Andrew' &#125;</span></span><br></pre></td></tr></table></figure>
-<p>正如我们在上面看到的，我们可以使用相同的构造函数来创建不同的对象：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> teacher = <span class="keyword">new</span> SoftwareDeveloper(<span class="string">'Richard'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(teacher);</span><br><span class="line"></span><br><span class="line"><span class="comment">// SoftwareDeveloper &#123; favoriteLanguage: 'JavaScript', name: 'Richard' &#125;</span></span><br></pre></td></tr></table></figure>
-<p>构造函数的好处是，我们可以调用相同的构造函数，创建无数个实例或对象。</p>
-<h2 id="省略-new-运算符"><a href="#省略-new-运算符" class="headerlink" title="省略 new 运算符"></a>省略 new 运算符</h2><hr>
-<p>如果你无意中 <strong>没有</strong> 使用 <code>new</code> 运算符来调用构造函数，会发生什么？</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SoftwareDeveloper</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.favoriteLanguage = <span class="string">'JavaScript'</span>;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> coder = SoftwareDeveloper(<span class="string">'David'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(coder);</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-<p>这是怎么回事？如果不使用 <code>new</code> 运算符，则不会创建对象。该函数会像任何其他常规函数一样被调用。由于该函数不会 _返回_ 任何东西（除了所有函数都会默认返回的 undefined 之外），因此 <code>coder</code> 变量最终会被分配给 <code>undefined</code>。</p>
-<p>还有一点需要注意：由于这个函数作为一个常规函数被调用，因此 <code>this</code> 的值也会截然不同。现在不用太在意这一点，我们将在下一部分深入探讨 <code>this</code> 关键字！</p>
-<h2 id="查看对象的构造函数-instanceof"><a href="#查看对象的构造函数-instanceof" class="headerlink" title="查看对象的构造函数(instanceof)"></a>查看对象的构造函数(instanceof)</h2><hr>
-<p>如果我们想查看某个对象是否是用构造函数创建的呢？我们可以使用 <code>instanceof</code>（它会返回一个布尔值）来窥见一些端倪。让我们来看看吧！</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Developer</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> dev = <span class="keyword">new</span> Developer(<span class="string">'Veronkia'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> dev;  <span class="comment">// "object"</span></span><br><span class="line"></span><br><span class="line">dev <span class="keyword">instanceof</span> Developer;  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h3 id="instanceof-和原型链"><a href="#instanceof-和原型链" class="headerlink" title="instanceof 和原型链"></a>instanceof 和原型链</h3><hr>
-<p>在以上示例中，<code>instanceof</code> 确认一个特定的构造函数确实创建了一个特定的对象。我们知道这一点，是因为我们在调用 <code>Developer()</code> 构造函数之后直接实例化了 <code>dev</code> 对象。</p>
-<p>然而，很多时候并没有这么简单：instanceof 运算符实际上会测试构造函数是否出现在某个对象的原型链中。这意味着，虽然我们不是总能检查到底是 <em>哪个构造函数</em> 创建了该对象，但是它使我们能够洞察某个对象可能访问哪些其他的属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funFunction();</span><br><span class="line"><span class="comment">// (返回全局对象, `window`)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第四种调用函数的方式可以让我们自己设置 this！现在不用在意这一点，我们将在下一部分进行深入探讨。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Call Style</th>
+<th style="text-align:center"><code>new</code></th>
+<th style="text-align:center">method</th>
+<th style="text-align:center">function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>this</code></td>
+<td style="text-align:center">{}</td>
+<td style="text-align:center">object itself</td>
+<td style="text-align:center">global object</td>
+</tr>
+<tr>
+<td style="text-align:center">Example</td>
+<td style="text-align:center">new Cat()</td>
+<td style="text-align:center">bailey.sayName()</td>
+<td style="text-align:center">introduce()</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>如果使用 <code>new</code> 运算符来调用构造函数，<code>this</code> 的值将被设置为新创建的对象，如果在对象上调用方法，<code>this</code> 将被设置为该对象本身，如果简单地调用一个函数，<code>this</code> 将被设置为全局对象: <code>window</code></p>
+</blockquote>
+<h3 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h3><blockquote>
+<p>请考虑以下构造函数 <code>City</code>：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">City</span>(<span class="params">name, population</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.population = population;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.identify = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>'s population is <span class="subst">$&#123;<span class="keyword">this</span>.population&#125;</span>.`</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当 <code>const sanFrancisco = new City(&#39;San Francisco&#39;, 870000)</code>; 被执行时，<code>this</code> 的值是什么？</p>
+<p><strong>答案：</strong> 新创建的对象，被 <code>sanFrancisco</code> 引用</p>
+<blockquote>
+<p>请考虑以下对象 <code>building</code>：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> building = &#123;</span><br><span class="line">    floors: <span class="number">5</span>,</span><br><span class="line">    addFloor: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.floors += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">building.addFloor();</span><br></pre></td></tr></table></figure>
+<p>当 <code>building.addFloor()</code> 被执行时，<code>this</code> 的值是什么？</p>
+<p><strong>答案：</strong> <code>building</code></p>
+<blockquote>
+<p>当以下函数被调用时，this 的值是多少？</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"What is the value of 'this'?"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>答案：</strong> <code>window</code></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><hr>
-<p>JavaScript 的类系统是直接使用函数和对象来构建的。使用 new 运算符来调用构造函数可以实例化一个新的对象。相同的构造函数可以用于创建不同的对象。</p>
-<p>我们在整篇中广泛讨论了函数、对象和 this。事实证明，这三者是密切相关的！ 我们将在下一部分深入探讨 this 关键字，并仔细分析这三者之间的关系。</p>
+<p>函数、对象和 <code>this</code> 彼此相互关联。当使用 <code>new</code> 运算符来调用构造函数时，<code>this</code> 变量会被设置为新创建的对象。当在对象上调用方法时，<code>this</code> 会被设置为该对象本身。当在浏览器环境中调用函数时，<code>this</code> 会被设置为 <code>window</code>，也被称为全局对象。</p>
+<p>除此之外，还有一组方式可以调用函数：使用 <code>apply()</code> 和使用 <code>call()</code>。这两种方式有许多相似之处，每一种方式都允许我们指定如何设置 <code>this</code>。接下来，我们会对它们进行详细分析！</p>
 
       
     </div>
@@ -538,9 +574,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Constructor/" rel="tag"><i class="fa fa-tag"></i> Constructor</a>
-          
-            <a href="/tags/Object/" rel="tag"><i class="fa fa-tag"></i> Object</a>
+            <a href="/tags/this/" rel="tag"><i class="fa fa-tag"></i> this</a>
           
         </div>
       
@@ -553,8 +587,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/28/Javascript-的-this-用法/" rel="next" title="Javascript 的 this 用法">
-                <i class="fa fa-chevron-left"></i> Javascript 的 this 用法
+              <a href="/2018/07/14/子类/" rel="next" title="原型继承:子类">
+                <i class="fa fa-chevron-left"></i> 原型继承:子类
               </a>
             
           </div>
@@ -563,8 +597,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/28/设置自己的this/" rel="prev" title="设置自己的this">
-                设置自己的this <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/28/构造函数/" rel="prev" title="构造函数">
+                构造函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -777,7 +811,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数：结构和语法"><span class="nav-number">1.</span> <span class="nav-text">构造函数：结构和语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个新的对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建一个新的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数可以有参数"><span class="nav-number">1.2.</span> <span class="nav-text">构造函数可以有参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#省略-new-运算符"><span class="nav-number">1.3.</span> <span class="nav-text">省略 new 运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看对象的构造函数-instanceof"><span class="nav-number">1.4.</span> <span class="nav-text">查看对象的构造函数(instanceof)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof-和原型链"><span class="nav-number">1.4.1.</span> <span class="nav-text">instanceof 和原型链</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数中的-this"><span class="nav-number">1.</span> <span class="nav-text">构造函数中的 this</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#this-什么时候会被赋值？"><span class="nav-number"></span> <span class="nav-text">this 什么时候会被赋值？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this-会被设置为什么？"><span class="nav-number"></span> <span class="nav-text">this 会被设置为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number"></span> <span class="nav-text">小结</span></a></li></div>
             
 
           </div>
