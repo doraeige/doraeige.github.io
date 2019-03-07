@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-07T06:56:14.138Z</updated>
+  <updated>2019-03-01T17:31:29.828Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>响应式设计(五)</title>
-    <link href="http://yoursite.com/2019/03/07/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1-%E4%BA%94/"/>
-    <id>http://yoursite.com/2019/03/07/响应式设计-五/</id>
-    <published>2019-03-07T06:56:14.000Z</published>
-    <updated>2019-03-07T06:56:14.138Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>面试官问你&quot;有什么问题问我吗?&quot;，该如何回答？</title>
@@ -246,6 +232,35 @@
       <category term="Constructor" scheme="http://yoursite.com/tags/Constructor/"/>
     
       <category term="Object" scheme="http://yoursite.com/tags/Object/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>响应式设计(五)</title>
+    <link href="http://yoursite.com/2018/05/08/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1-%E4%BA%94/"/>
+    <id>http://yoursite.com/2018/05/08/响应式设计-五/</id>
+    <published>2018-05-08T06:56:14.000Z</published>
+    <updated>2019-03-07T09:18:53.763Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="响应式图片"><a href="#响应式图片" class="headerlink" title="响应式图片"></a>响应式图片</h2><hr><p>图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。</p><p>在这章中，你将用到 <strong>Google Chrome</strong> 和 <strong>Chrome开发者工具</strong>，如果你没用过 <strong>Chrome开发者工具</strong> ，可以查看文末链接了解。</p><p>你可以用 <strong>Chrome开发者工具</strong> 快速得知你的网页在各种设备上的表现。当然，设备模拟器并不能真正代替在实际设备上的体验。为了在手机或平板设备上进行测试，你需要确保已经配置好了远程调试所需的环境。</p><h3 id="比特和像素"><a href="#比特和像素" class="headerlink" title="比特和像素"></a>比特和像素</h3><hr><blockquote><p><strong>Total bits = pixels x bits per pixel</strong></p></blockquote><p>照片等图片文件的大小，取决于 <strong>像素数</strong> 乘以 <strong>存储每个像素所需比特的数量</strong>。因此，为了提高网站性能，你要使用 <strong>尽可能小的图片尺寸</strong> 以及 <strong>尽可能高的图片压缩率</strong>。</p><p>保存图片时的第一条原则是 用尽可能最低的质量和尽可能小的尺寸。不过，你该如何在保持图片质量的同时减少文件大小呢。</p><h3 id="请求和盈利"><a href="#请求和盈利" class="headerlink" title="请求和盈利"></a>请求和盈利</h3><hr><p>更重要的是 平均每个网页发出 56个 请求以加载图片；每次请求对页面加载都是一项成本。</p><p>谷歌，亚马逊和其他公司的研究表明，即使是一个非常小的页面加载延误都可能造成明显的流量和经济损失。</p><h3 id="相对大小"><a href="#相对大小" class="headerlink" title="相对大小"></a>相对大小</h3><hr><p>将图片的 <code>max-width</code> 设置为 <strong>100%</strong>，图片会很好的扩大，不过最大也只能放大到它的自然宽度。</p><p>如果想要两张图片（假设图片宽426px）并列对齐，无论视图区域的尺寸如何，该怎么做？简单，调整相对尺寸为50%的宽度。如果想要在两个图片之间加一个 10px 的边距，可以使用 <code>margin-right: 10px;</code> 也可以使用 <code>calc</code>，这是一个结合绝对值和相对值的好办法。比如，将百分比宽度与一个固定的边距组合</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">426px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">calc</span>((100% - 10px) / <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="横向和纵向"><a href="#横向和纵向" class="headerlink" title="横向和纵向"></a>横向和纵向</h3><hr><p>对于响应式设计来说，一个黄金法则就是 <strong>不要假设视图区域的尺寸一致保持相同</strong>。</p><p>学习对于不同屏幕方向，如何使用 <strong>media queries</strong></p><h3 id="鲜为人知的CSS单位"><a href="#鲜为人知的CSS单位" class="headerlink" title="鲜为人知的CSS单位"></a>鲜为人知的CSS单位</h3><hr><p>你想要一张图片响应式铺满视图区域的整个高度吗？</p><p>你可能经常设置图片高度为100%，不过这个只在 HTML 的高度下起作用。而且body 元素得高度也同样被设置为 100%。</p><p>一个简单方法是使用 <code>VH</code> 单位，是视图高度的缩写。一个VH 单位对应着 1% 的视图高度。因而，100VH 对应着 100% 的高度。你可以同样使用 <code>VW</code> 视图宽度，你可以设置图片的宽度为 <code>100VW</code> ，等于 100% 的视图宽度。都是最大的。</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>另一个常见的响应式用例是 当你想要调整图片尺寸去适应视图区域较小的高度或宽度，可以使用 <code>vmin</code>单位，对应着 1% 的宽度或高度，使得视图区域最小化。</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100vmin</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vmin</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果你想要一张图片铺满整个视图区域而不需要拉伸或收缩图片的话，可以使用 <code>vmax</code>单位，对应着 1% 的视图区域宽度或高度，都是最大的。</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100vmax</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vmax</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>随意拿一张图片来测试一下，是否注意到，将 <code>height</code> 和 <code>width</code> 设置为 <code>100vmax</code> 或 <code>100vmin</code> 会如何改变图片的宽高比？<strong>它会将你的图片压缩成正方形</strong>，所以，如果你想要保留其他宽高比，请小心！</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr><p>通过这节，你已经学会如何运用响应式技巧去匹配不同设备的页面布局。</p><h3 id="延展"><a href="#延展" class="headerlink" title="延展"></a>延展</h3><ul><li><p><a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank" rel="noopener">Chrome 开发者工具概览</a></p></li><li><p><a href="https://news.ycombinator.com/item?id=273900" target="_blank" rel="noopener">页面加载时间每延迟 100 毫秒，Amazon 的利润就会降低 1%</a></p></li><li><p><a href="https://httparchive.org/reports/state-of-the-web#bytesImg&amp;reqImg" target="_blank" rel="noopener">HTTP 存档</a>：一般来说，网页会对图片发出 56 次请求。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;响应式图片&quot;&gt;&lt;a href=&quot;#响应式图片&quot; class=&quot;headerlink&quot; title=&quot;响应式图片&quot;&gt;&lt;/a&gt;响应式图片&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。&lt;/p&gt;
+&lt;p&gt;在这章中，
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+    
+    
+      <category term="响应式" scheme="http://yoursite.com/tags/%E5%93%8D%E5%BA%94%E5%BC%8F/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
     
   </entry>
   
