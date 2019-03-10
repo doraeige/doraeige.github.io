@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="响应式图片 图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。 在这章中，你将用到 Google Chrome 和 Chrome开发者工具。 你可以用 Chrome开发者工具 快速得知你的网页在各种设备上的表现。当然，设备模拟器并不能真正代替在实际设备上的体验。为了在手机或平板设备上进行测试，你需要确保已经配置好了远程调试所需的环境。 比特和像素  Total bit">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-10T15:21:55.151Z">
+<meta property="og:updated_time" content="2019-03-10T15:48:39.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(五)">
 <meta name="twitter:description" content="响应式图片 图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。 在这章中，你将用到 Google Chrome 和 Chrome开发者工具。 你可以用 Chrome开发者工具 快速得知你的网页在各种设备上的表现。当然，设备模拟器并不能真正代替在实际设备上的体验。为了在手机或平板设备上进行测试，你需要确保已经配置好了远程调试所需的环境。 比特和像素  Total bit">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.4k
+                  3.8k
                 </span>
               
 
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12
+                  13
                 </span>
               
             </div>
@@ -615,7 +615,16 @@
 <blockquote>
 <p>开发一个可以自行发布图片日记的手机网站，也就是说图片都是单次利用的。用户会创建一些独有的网页来发布单张图片并佐以说明文字，你应该把它们转化为 <strong>矢量图</strong> 还是 <strong>仅仅保留格式为 .jpg 的图片</strong>呢？是 <strong>内嵌图片</strong> 还是 设置它们的 <strong>src</strong> 属性来链接外部文件呢？</p>
 </blockquote>
-<p><strong>答案：</strong> 首先，用户的图片应该仍然被保留为 jpeg 格式</p>
+<p><strong>答案：</strong> 首先，用户的图片应该仍然被保留为 jpeg 格式，这些图片本来就是光栅图，所以还是以光栅图的形式保存它们。</p>
+<p>考虑到你的用户是手机上访问网站，实际上内嵌图片是个不错的想法，如果你可以做到的话。内嵌图片可以减少浏览器的请求次数，而文件请求是造成手机访问延迟和网页加载不全的重要原因之一。文件请求会增加往返通讯，而往返通讯是手机网页加载缓慢的最重要因素之一。但是内嵌图片会限制你的响应式网站，这个下面会讲到，所以最终，外部文件链接依然可以是一种选择。</p>
+<blockquote>
+<p>开发一个公司网站，公司希望它的 logo 出现在任何一个页面的左上角，很有可能他们还希望一个更大版本的公司logo能出现在搜索引擎的着陆页面，通常来说，用户可以通过手机或者电脑的任何一种来访问，所以你应该使用logo的 <strong>矢量图片</strong> 还是 <strong>光栅图片</strong>？ 是 <strong>内嵌logo图片</strong> 还是 设置它的 <strong>src</strong> 外部文件链接呢？</p>
+</blockquote>
+<p><strong>答案：</strong> 第一个问题是 应该使用 矢量图，首先，这个logo 非常简单，因为它是基于文本的，所以将其装换为矢量图不会太困难，其次，你希望它有一大一小两个版本，矢量图可伸缩性很好。所以 logo 的大小版本可以使用同一个源文件。</p>
+<p>第二个问题，我觉得应该选择外部文件链接，这样它可以被用于多个页面，浏览器可以将它缓存。</p>
+<blockquote>
+<p>你在创建一个叫做 vicarious concerts 的移动网页应用</p>
+</blockquote>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr>
 <p>通过这节，你已经学会如何运用响应式技巧去匹配不同设备的页面布局。</p>
 <h3 id="延展"><a href="#延展" class="headerlink" title="延展"></a>延展</h3><ul>
@@ -943,7 +952,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28.4k</span>
+    <span title="Site words total count">28.8k</span>
   
 </div>
 
