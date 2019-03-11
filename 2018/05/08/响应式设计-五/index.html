@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="响应式图片 图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。 在这章中，你将用到 Google Chrome 和 Chrome开发者工具。 你可以用 Chrome开发者工具 快速得知你的网页在各种设备上的表现。当然，设备模拟器并不能真正代替在实际设备上的体验。为了在手机或平板设备上进行测试，你需要确保已经配置好了远程调试所需的环境。 比特和像素  Total bit">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-11T03:43:08.632Z">
+<meta property="og:updated_time" content="2019-03-11T04:50:32.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(五)">
 <meta name="twitter:description" content="响应式图片 图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。 在这章中，你将用到 Google Chrome 和 Chrome开发者工具。 你可以用 Chrome开发者工具 快速得知你的网页在各种设备上的表现。当然，设备模拟器并不能真正代替在实际设备上的体验。为了在手机或平板设备上进行测试，你需要确保已经配置好了远程调试所需的环境。 比特和像素  Total bit">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.3k
+                  5.3k
                 </span>
               
 
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  15
+                  19
                 </span>
               
             </div>
@@ -629,6 +629,30 @@
 </blockquote>
 <p><strong>答案：</strong> 第一个问题是 应该使用 <strong>svg 动图</strong>；首先，矢量图形更好因为它们可以被无限伸缩而不像 gif 是光栅图形；其次，svg 文件实际上要比 gif 文件小，因为你用的是同一张图片，只是生成了它的旋转动画，而不是播放许多张光碟的图片来表示它在旋转时每个时刻的样子。</p>
 <p>第二个问题，选择外部文件链接就很合理，因为多个视频都使用同一个旋转光碟的图标，让浏览器缓存动画再应用到各个页面非常合理。</p>
+<h2 id="image-的-srcset-属性"><a href="#image-的-srcset-属性" class="headerlink" title="image 的 srcset 属性"></a>image 的 srcset 属性</h2><hr>
+<p>srcset 有两种自定义方式，<strong>一种使用 x 来区分设备像素比 (DPR)</strong>，<strong>另一种使用 w 来描述图像的宽度。</strong></p>
+<p><strong>对设备像素比的反应</strong>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"image_2x.jpg"</span> <span class="attr">srcset</span>=<span class="string">"image_2x.jpg 2x, image_1x.jpg 1x"</span> <span class="attr">alt</span>=<span class="string">"a cool image"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>将 <strong>srcset</strong> 设置为与逗号分隔的一连串 filename multiplier 对相等，其中每个 multiplier乘数 必须是后跟 x 的整数。</p>
+<p>例如，1x 表示 1 倍显示屏，2x 表示像素密度为两倍的显示屏，如 Apple 的 Retina 显示屏。</p>
+<p>浏览器会下载与其 DPR 对应的最佳图片。</p>
+<p>另请注意，有一个作为备用的 src 属性。</p>
+<p><strong>对图片宽度的反应</strong>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"image_200.jpg"</span> <span class="attr">srcset</span>=<span class="string">"image_200.jpg 200w, image_100.jpg 100w"</span> <span class="attr">alt</span>=<span class="string">"a cool image"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>将 <strong>srcset</strong> 设置为与逗号分隔的一连串 <strong>filename widthDescriptor</strong> 对相等，其中每个 <strong>widthDescriptor宽度描述符</strong> 都以像素为测量单位， 并且必须是后跟 <strong>w</strong> 的整数。在这里，<strong>widthDescriptor宽度描述符</strong> 指定每个图片文件的自然宽度，使浏览器能够根据窗口大小和 DPR 选择要请求的最适当的图片。 （如果有 <strong>widthDescriptor宽度描述符</strong>，浏览器下载图片才能知道其宽度！）</p>
+<p>另请注意，有一个作为备用的 src 属性。</p>
+<p><strong>包含大小的图片宽度</strong><br>如果图片不以全窗口宽度显示会怎样？那么，除了 <strong>srcset</strong> 外，你还需要其他元素（假设图片将为全窗口宽度）</p>
+<p>向包含媒体查询的图片添加一个 <strong>sizes</strong> 属性和一个 vw 值。<strong>srcset</strong> 和 <strong>sizes</strong> 合起来可让浏览器知道图片的自然宽度以及图片相对于窗口宽度的显示宽度。 知道图片的显示宽度和可用图片文件的宽度后，浏览器将获得下载具有满足其需求的适当分辨率且尽可能小的图片所需的信息。 而且，浏览器在页面加载初期，解析 HTML 时即可做出此选择。</p>
+<p><strong>srcset 与 sizes 配合使用的语法</strong><br>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"w"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"images/great_pic_800.jpg"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">sizes</span>=<span class="string">"(max-width: 400px) 100vw, (min-width: 401px) 50vw"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">srcset</span>=<span class="string">"images/great_pic_400.jpg 400w, images/great_pic_800.jpg 800w"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">alt</span>=<span class="string">"great picture"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在本示例中，如果浏览器的窗口宽度等于或小于 400 像素，浏览器知道图片将为全窗口宽度；如果窗口宽度大于 400 像素，则为一半窗口宽度。浏览器知道它具有两个图片选项 - 一个具有 400 像素的自然宽度，另一个具有 800 像素。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"w"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"images/Coffee_1280w.jpg"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">srcset</span>=<span class="string">"images/Coffee_1280w.jpg 1280w, images/Coffee_640w.jpg 640w"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">sizes</span>=<span class="string">"(max-width: 960px) 50vw, 100vw"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">alt</span>=<span class="string">"Coffee by Amy March from Turkey"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在本示例中，浏览器知道它可以选择使用Coffee_1280w.jpg 和Coffee_640w.jpg，宽度分别为1280px和640px。如果页面宽度为960px或更小，浏览器图像将以一半窗口宽度 50vw显示，否则图像将显示为全窗口宽度 100vw。</p>
+<p>我没有在 sizes 中包括第二个媒体查询，因为如果没有媒体查询，列出的宽度会被视为默认值。</p>
+<p>另外请注意，sizes 中的媒体查询与 CSS 匹配。说明一下，更改 sizes 不会影响 CSS。它只会提醒浏览器注意最终需要在该处显示的图片。</p>
+<p><strong>sizes</strong> 由以逗号分隔的 mediaQuery width 对组成。<strong>sizes</strong> 会在加载流程初期告诉浏览器，该图片会在点击 mediaQuery 时以某个 width 显示。</p>
+<p>实际上，如果 <strong>sizes</strong> 缺失，浏览器会将 <strong>sizes</strong> 默认为 100vw，表示它预计图片将以全窗口宽度显示。</p>
+<p><strong>sizes</strong> 会为浏览器额外提供一条信息，以确保它根据图片的最终显示宽度下载正确的图片文件。说明一下，它实际上不会调整图片的大小 - 这是 CSS 的工作。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr>
 <p>通过这节，你已经学会图片并不总是必要的，利用 css 和 图标字体来替代传统图片给响应式设计提供了高性能的解决方案。</p>
 <h3 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h3><p>要求：</p>
@@ -929,7 +953,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式图片"><span class="nav-number">1.</span> <span class="nav-text">响应式图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比特和像素"><span class="nav-number">1.1.</span> <span class="nav-text">比特和像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求和盈利"><span class="nav-number">1.2.</span> <span class="nav-text">请求和盈利</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对大小"><span class="nav-number">1.3.</span> <span class="nav-text">相对大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横向和纵向"><span class="nav-number">1.4.</span> <span class="nav-text">横向和纵向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鲜为人知的CSS单位"><span class="nav-number">1.5.</span> <span class="nav-text">鲜为人知的CSS单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光栅图-Raster-和矢量图-Vector"><span class="nav-number">1.6.</span> <span class="nav-text">光栅图(Raster)和矢量图(Vector)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩、优化和自动化"><span class="nav-number">1.7.</span> <span class="nav-text">压缩、优化和自动化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">2.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-背景图片技巧"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 背景图片技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号字符"><span class="nav-number">2.2.</span> <span class="nav-text">符号字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图标字体"><span class="nav-number">2.3.</span> <span class="nav-text">图标字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG-和数据-URI-内嵌图片"><span class="nav-number">2.4.</span> <span class="nav-text">SVG 和数据 URI 内嵌图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些不同的技巧，用来处理网页的图片"><span class="nav-number">3.</span> <span class="nav-text">一些不同的技巧，用来处理网页的图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">3.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#综合练习"><span class="nav-number">4.1.</span> <span class="nav-text">综合练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延展"><span class="nav-number">4.2.</span> <span class="nav-text">延展</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式图片"><span class="nav-number">1.</span> <span class="nav-text">响应式图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比特和像素"><span class="nav-number">1.1.</span> <span class="nav-text">比特和像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求和盈利"><span class="nav-number">1.2.</span> <span class="nav-text">请求和盈利</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对大小"><span class="nav-number">1.3.</span> <span class="nav-text">相对大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横向和纵向"><span class="nav-number">1.4.</span> <span class="nav-text">横向和纵向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鲜为人知的CSS单位"><span class="nav-number">1.5.</span> <span class="nav-text">鲜为人知的CSS单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光栅图-Raster-和矢量图-Vector"><span class="nav-number">1.6.</span> <span class="nav-text">光栅图(Raster)和矢量图(Vector)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩、优化和自动化"><span class="nav-number">1.7.</span> <span class="nav-text">压缩、优化和自动化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">2.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-背景图片技巧"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 背景图片技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号字符"><span class="nav-number">2.2.</span> <span class="nav-text">符号字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图标字体"><span class="nav-number">2.3.</span> <span class="nav-text">图标字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG-和数据-URI-内嵌图片"><span class="nav-number">2.4.</span> <span class="nav-text">SVG 和数据 URI 内嵌图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些不同的技巧，用来处理网页的图片"><span class="nav-number">3.</span> <span class="nav-text">一些不同的技巧，用来处理网页的图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">3.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-的-srcset-属性"><span class="nav-number">4.</span> <span class="nav-text">image 的 srcset 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#综合练习"><span class="nav-number">5.1.</span> <span class="nav-text">综合练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延展"><span class="nav-number">5.2.</span> <span class="nav-text">延展</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -965,7 +989,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29.3k</span>
+    <span title="Site words total count">30.3k</span>
   
 </div>
 
