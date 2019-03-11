@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="hey,Sophia!">
 <meta property="og:description" content="响应式图片 图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。 在这章中，你将用到 Google Chrome 和 Chrome开发者工具。 你可以用 Chrome开发者工具 快速得知你的网页在各种设备上的表现。当然，设备模拟器并不能真正代替在实际设备上的体验。为了在手机或平板设备上进行测试，你需要确保已经配置好了远程调试所需的环境。 比特和像素  Total bit">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-10T15:48:39.789Z">
+<meta property="og:updated_time" content="2019-03-11T03:22:10.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式设计(五)">
 <meta name="twitter:description" content="响应式图片 图片平均消耗 60% 以上的字节数来打开网页，但“网络中”大多数字节数用于视频。 在这章中，你将用到 Google Chrome 和 Chrome开发者工具。 你可以用 Chrome开发者工具 快速得知你的网页在各种设备上的表现。当然，设备模拟器并不能真正代替在实际设备上的体验。为了在手机或平板设备上进行测试，你需要确保已经配置好了远程调试所需的环境。 比特和像素  Total bit">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.8k
+                  4.3k
                 </span>
               
 
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  13
+                  15
                 </span>
               
             </div>
@@ -623,10 +623,21 @@
 <p><strong>答案：</strong> 第一个问题是 应该使用 矢量图，首先，这个logo 非常简单，因为它是基于文本的，所以将其装换为矢量图不会太困难，其次，你希望它有一大一小两个版本，矢量图可伸缩性很好。所以 logo 的大小版本可以使用同一个源文件。</p>
 <p>第二个问题，我觉得应该选择外部文件链接，这样它可以被用于多个页面，浏览器可以将它缓存。</p>
 <blockquote>
-<p>你在创建一个叫做 vicarious concerts 的移动网页应用</p>
+<p>你在创建一个叫做 vicarious concerts 的 <strong>移动网页应用</strong>，用来比较任意观众为音乐会录制的视频，每个视频的加载都需要几秒钟的时间，你决定显示一个旋转的光碟图标，在视频加载时，出现在视频的位置，你应该用这个光碟图标的 <strong>gif动画</strong> 还是 <strong>svg 动图</strong> 呢？是应该 <strong>内嵌</strong> 这个旋转动画呢？还是 设置它的 <strong>src</strong> 外部文件链接呢？</p>
 </blockquote>
+<p><strong>答案：</strong> 第一个问题是 应该使用 <strong>svg 动图</strong>；首先，矢量图形更好因为它们可以被无限伸缩而不像 gif 是光栅图形；其次，svg 文件实际上要比 gif 文件小，因为你用的是同一张图片，只是生成了它的旋转动画，而不是播放许多张光碟的图片来表示它在旋转时每个时刻的样子。</p>
+<p>第二个问题，选择外部文件链接就很合理，因为多个视频都使用同一个旋转光碟的图标，让浏览器缓存动画再应用到各个页面非常合理。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr>
-<p>通过这节，你已经学会如何运用响应式技巧去匹配不同设备的页面布局。</p>
+<p>通过这节，你已经学会图片并不总是必要的，利用 css 和 图标字体来替代传统图片给响应式设计提供了高性能的解决方案。</p>
+<h3 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h3><p>要求：</p>
+<ul>
+<li>首先，找到笑脸标志，这是个PNG 图片，把它替换成 Unicode 字符</li>
+<li>博客怎能没有社交链接，利用 zocial 在页面底部添加一些社交媒体链接</li>
+<li>看到底部那张诡异的装饰图了吗？是个 PNG 图片，它显然非常的不合时宜，所以请将它替换成一个更合理的内容</li>
+<li>你可以添加一个响应式 logo，尽情发挥你的灵感</li>
+</ul>
+<p><a href="https://github.com/doraeige/tests/tree/master/blog/start" target="_blank" rel="noopener">项目链接</a></p>
+<p><a href="https://github.com/doraeige/tests/tree/master/blog/solution" target="_blank" rel="noopener">项目参考答案</a></p>
 <h3 id="延展"><a href="#延展" class="headerlink" title="延展"></a>延展</h3><ul>
 <li><p><a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank" rel="noopener">Chrome 开发者工具概览</a></p>
 </li>
@@ -916,7 +927,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式图片"><span class="nav-number">1.</span> <span class="nav-text">响应式图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比特和像素"><span class="nav-number">1.1.</span> <span class="nav-text">比特和像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求和盈利"><span class="nav-number">1.2.</span> <span class="nav-text">请求和盈利</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对大小"><span class="nav-number">1.3.</span> <span class="nav-text">相对大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横向和纵向"><span class="nav-number">1.4.</span> <span class="nav-text">横向和纵向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鲜为人知的CSS单位"><span class="nav-number">1.5.</span> <span class="nav-text">鲜为人知的CSS单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光栅图-Raster-和矢量图-Vector"><span class="nav-number">1.6.</span> <span class="nav-text">光栅图(Raster)和矢量图(Vector)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩、优化和自动化"><span class="nav-number">1.7.</span> <span class="nav-text">压缩、优化和自动化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">2.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-背景图片技巧"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 背景图片技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号字符"><span class="nav-number">2.2.</span> <span class="nav-text">符号字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图标字体"><span class="nav-number">2.3.</span> <span class="nav-text">图标字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG-和数据-URI-内嵌图片"><span class="nav-number">2.4.</span> <span class="nav-text">SVG 和数据 URI 内嵌图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些不同的技巧，用来处理网页的图片"><span class="nav-number">3.</span> <span class="nav-text">一些不同的技巧，用来处理网页的图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">3.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#延展"><span class="nav-number">4.1.</span> <span class="nav-text">延展</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式图片"><span class="nav-number">1.</span> <span class="nav-text">响应式图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比特和像素"><span class="nav-number">1.1.</span> <span class="nav-text">比特和像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求和盈利"><span class="nav-number">1.2.</span> <span class="nav-text">请求和盈利</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对大小"><span class="nav-number">1.3.</span> <span class="nav-text">相对大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横向和纵向"><span class="nav-number">1.4.</span> <span class="nav-text">横向和纵向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鲜为人知的CSS单位"><span class="nav-number">1.5.</span> <span class="nav-text">鲜为人知的CSS单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光栅图-Raster-和矢量图-Vector"><span class="nav-number">1.6.</span> <span class="nav-text">光栅图(Raster)和矢量图(Vector)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩、优化和自动化"><span class="nav-number">1.7.</span> <span class="nav-text">压缩、优化和自动化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">2.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-背景图片技巧"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 背景图片技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号字符"><span class="nav-number">2.2.</span> <span class="nav-text">符号字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图标字体"><span class="nav-number">2.3.</span> <span class="nav-text">图标字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG-和数据-URI-内嵌图片"><span class="nav-number">2.4.</span> <span class="nav-text">SVG 和数据 URI 内嵌图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些不同的技巧，用来处理网页的图片"><span class="nav-number">3.</span> <span class="nav-text">一些不同的技巧，用来处理网页的图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">3.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#综合练习"><span class="nav-number">4.1.</span> <span class="nav-text">综合练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延展"><span class="nav-number">4.2.</span> <span class="nav-text">延展</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -952,7 +963,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28.8k</span>
+    <span title="Site words total count">29.2k</span>
   
 </div>
 
