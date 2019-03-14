@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-14T08:11:44.408Z</updated>
+  <updated>2019-03-14T08:23:01.407Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/03/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/"/>
     <id>http://yoursite.com/2019/03/14/记一次面试/</id>
     <published>2019-03-14T06:44:42.000Z</published>
-    <updated>2019-03-14T08:11:44.408Z</updated>
+    <updated>2019-03-14T08:23:01.407Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>2019.3.13 某网络科技有限公司</p><table><thead><tr><th style="text-align:center">来源</th><th style="text-align:center">前端团队</th><th style="text-align:center">周工作时长</th><th style="text-align:center">结果</th></tr></thead><tbody><tr><td style="text-align:center">BOSS直聘</td><td style="text-align:center">2</td><td style="text-align:center">(10：00am - 6：30pm) 35h偶尔40h</td><td style="text-align:center">过</td></tr></tbody></table><p>未来上司面:</p><p><img src="/images/interview.png" alt="面试题目大纲"></p><p><strong>聊聊上司的那点事：</strong><br>温柔体贴、勤勤恳恳、面试中还不忘端茶倒水，问题由浅入深，耐心的给面试者解答</p><h3 id="面试中的主要瓶颈"><a href="#面试中的主要瓶颈" class="headerlink" title="面试中的主要瓶颈"></a>面试中的主要瓶颈</h3><ul><li>其中某些题，没有办法较为顺畅的表达出来，说明可能掌握的还不够，或者理解的不太顺畅，需要回去总结下，捋捋思路</li><li>对底层原理的实现了解的不多</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>2019.3.13 某网络科技有限公司</p><table><thead><tr><th style="text-align:center">来源</th><th style="text-align:center">前端团队</th><th style="text-align:center">周工作时长</th><th style="text-align:center">结果</th></tr></thead><tbody><tr><td style="text-align:center">BOSS直聘</td><td style="text-align:center">2</td><td style="text-align:center">10:00am-6:30pm 35h偶尔40h</td><td style="text-align:center">过</td></tr></tbody></table><p>未来上司面:</p><p><img src="/images/interview.png" alt="面试题目大纲"></p><p><strong>聊聊上司的那点事：</strong><br>温柔体贴、勤勤恳恳、面试中还不忘端茶倒水，问题由浅入深，耐心的给面试者解答</p><h3 id="面试中的主要瓶颈"><a href="#面试中的主要瓶颈" class="headerlink" title="面试中的主要瓶颈"></a>面试中的主要瓶颈</h3><ul><li>其中某些题，没有办法较为顺畅的表达出来，说明可能掌握的还不够，或者理解的不太顺畅，需要回去总结下，捋捋思路</li><li>对底层原理的实现了解的不多</li></ul>]]></content>
     
     <summary type="html">
     
