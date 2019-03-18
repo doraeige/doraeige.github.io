@@ -124,7 +124,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="git,linux,">
 
 
 
@@ -135,18 +135,20 @@
 
 
 
-<meta name="description" content="技术和生活，融为一体">
-<meta name="keywords" content="前端程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="查看本机git公匙和私匙 打开终端，先进入 ssh 配置目录 cd ~/.ssh/ 查看文件目录 ls 查看公匙 cat id_rsa.pub 或者查看私匙 cat id_rsa 建立公司专有公匙私匙 ssh-keygen -t rsa -P &quot;&quot; 按提示输入公司名  再打开ssh 配置目录，可以看到配置成功 cd ~/.ssh/ 查看文件目录 ls 查看配置的公司公匙 cat xxxx.pub">
+<meta name="keywords" content="git,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git管理 --- 常用Linux命令">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/git管理/index.html">
 <meta property="og:site_name" content="hey,Sophia!">
-<meta property="og:description" content="技术和生活，融为一体">
+<meta property="og:description" content="查看本机git公匙和私匙 打开终端，先进入 ssh 配置目录 cd ~/.ssh/ 查看文件目录 ls 查看公匙 cat id_rsa.pub 或者查看私匙 cat id_rsa 建立公司专有公匙私匙 ssh-keygen -t rsa -P &quot;&quot; 按提示输入公司名  再打开ssh 配置目录，可以看到配置成功 cd ~/.ssh/ 查看文件目录 ls 查看配置的公司公匙 cat xxxx.pub">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T07:23:47.765Z">
+<meta property="og:image" content="http://yoursite.com/images/ssh1.png">
+<meta property="og:updated_time" content="2019-03-18T14:40:25.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="技术和生活，融为一体">
+<meta name="twitter:title" content="git管理 --- 常用Linux命令">
+<meta name="twitter:description" content="查看本机git公匙和私匙 打开终端，先进入 ssh 配置目录 cd ~/.ssh/ 查看文件目录 ls 查看公匙 cat id_rsa.pub 或者查看私匙 cat id_rsa 建立公司专有公匙私匙 ssh-keygen -t rsa -P &quot;&quot; 按提示输入公司名  再打开ssh 配置目录，可以看到配置成功 cd ~/.ssh/ 查看文件目录 ls 查看配置的公司公匙 cat xxxx.pub">
+<meta name="twitter:image" content="http://yoursite.com/images/ssh1.png">
 
 
 
@@ -176,13 +178,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/18/git管理/">
 
 
 
 
 
-  <title>标签 | hey,Sophia!</title>
+  <title>git管理 --- 常用Linux命令 | hey,Sophia!</title>
   
 
 
@@ -341,40 +343,236 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/git管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoyaliu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hey,Sophia!">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 17 个标签
+          <h1 class="post-title" itemprop="name headline">git管理 --- 常用Linux命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T22:12:59+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  263
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Constructor/" style="font-size: 12px; color: #ccc">Constructor</a> <a href="/tags/Object/" style="font-size: 12px; color: #ccc">Object</a> <a href="/tags/Vue/" style="font-size: 12px; color: #ccc">Vue</a> <a href="/tags/axios/" style="font-size: 12px; color: #ccc">axios</a> <a href="/tags/css/" style="font-size: 30px; color: #111">css</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/prototype/" style="font-size: 21px; color: #6f6f6f">prototype</a> <a href="/tags/this/" style="font-size: 21px; color: #6f6f6f">this</a> <a href="/tags/word/" style="font-size: 12px; color: #ccc">word</a> <a href="/tags/响应式/" style="font-size: 30px; color: #111">响应式</a> <a href="/tags/移动设备/" style="font-size: 12px; color: #ccc">移动设备</a> <a href="/tags/编程逻辑/" style="font-size: 12px; color: #ccc">编程逻辑</a> <a href="/tags/调试/" style="font-size: 12px; color: #ccc">调试</a> <a href="/tags/面试/" style="font-size: 12px; color: #ccc">面试</a> <a href="/tags/面试问题/" style="font-size: 12px; color: #ccc">面试问题</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="查看本机git公匙和私匙"><a href="#查看本机git公匙和私匙" class="headerlink" title="查看本机git公匙和私匙"></a>查看本机git公匙和私匙</h2><hr>
+<p>打开终端，先进入 ssh 配置目录</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/.ssh/</span></span><br></pre></td></tr></table></figure>
+<p>查看文件目录</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>查看公匙</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>或者查看私匙</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cat id_rsa</span><br></pre></td></tr></table></figure>
+<h2 id="建立公司专有公匙私匙"><a href="#建立公司专有公匙私匙" class="headerlink" title="建立公司专有公匙私匙"></a>建立公司专有公匙私匙</h2><hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -P <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>按提示输入公司名</p>
+<p><img src="/images/ssh1.png" alt="ssh"></p>
+<p>再打开ssh 配置目录，可以看到配置成功</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/.ssh/</span></span><br></pre></td></tr></table></figure>
+<p>查看文件目录</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>查看配置的公司公匙</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cat xxxx.pub</span><br></pre></td></tr></table></figure>
+<h2 id="GitLab-来管理git"><a href="#GitLab-来管理git" class="headerlink" title="GitLab 来管理git"></a>GitLab 来管理git</h2><hr>
+<p>登录 <strong>GitLab</strong>，点击 <strong>Settings</strong>，左侧边栏 点击 <strong>SSH Keys</strong> 用户SSH密匙设置，把刚才创建的 <strong>公匙</strong> 粘贴到 <strong>KEY</strong> 一栏，<strong>Title</strong> 只是显示作用，默认就好，最后点 <strong>Add Key</strong></p>
+<p>回到终端</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">vim ~<span class="regexp">/.ssh/</span>config</span><br></pre></td></tr></table></figure>
+<p>按 <code>i</code> (英文输入法) 编辑：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"># 公司名</span><br><span class="line">Host 账号</span><br><span class="line">Port <span class="number">22211</span></span><br><span class="line">User 用户名</span><br><span class="line">IdentityFile ~<span class="regexp">/.ssh/</span>公司名</span><br></pre></td></tr></table></figure>
+<p>编辑好，按 <code>Esc</code> 退出编辑模式，最后输入 <code>:wq</code>，保存并退出。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>vim</code> 是一个终端编辑器，可以看做是 VSCode，按 <code>i</code> 进入编辑模式，按 <code>Esc</code> 退出编辑模式，<code>:w</code> 是保存，<code>:q</code> 是退出， <code>:wq</code> 是保存并退出</p>
+
       
     </div>
     
     
     
+
+    <div>
+      
+        <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/16/axios-请求改造封装/" rel="next" title="axios 请求改造封装">
+                <i class="fa fa-chevron-left"></i> axios 请求改造封装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -409,8 +607,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -548,6 +755,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看本机git公匙和私匙"><span class="nav-number">1.</span> <span class="nav-text">查看本机git公匙和私匙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立公司专有公匙私匙"><span class="nav-number">2.</span> <span class="nav-text">建立公司专有公匙私匙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitLab-来管理git"><span class="nav-number">3.</span> <span class="nav-text">GitLab 来管理git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
