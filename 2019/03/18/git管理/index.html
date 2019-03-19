@@ -144,7 +144,7 @@
 <meta property="og:description" content="查看本机git公匙和私匙 打开终端，先进入 ssh 配置目录 cd ~/.ssh/ 查看文件目录 ls 查看公匙 cat id_rsa.pub 或者查看私匙 cat id_rsa 建立公司专有公匙私匙 ssh-keygen -t rsa -P &quot;&quot; 按提示输入公司名  再打开ssh 配置目录，可以看到配置成功 cd ~/.ssh/ 查看文件目录 ls 查看配置的公司公匙 cat xxxx.pub">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/ssh1.png">
-<meta property="og:updated_time" content="2019-03-18T15:05:04.833Z">
+<meta property="og:updated_time" content="2019-03-19T04:25:41.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git管理 --- 常用Linux命令">
 <meta name="twitter:description" content="查看本机git公匙和私匙 打开终端，先进入 ssh 配置目录 cd ~/.ssh/ 查看文件目录 ls 查看公匙 cat id_rsa.pub 或者查看私匙 cat id_rsa 建立公司专有公匙私匙 ssh-keygen -t rsa -P &quot;&quot; 按提示输入公司名  再打开ssh 配置目录，可以看到配置成功 cd ~/.ssh/ 查看文件目录 ls 查看配置的公司公匙 cat xxxx.pub">
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  265
+                  433
                 </span>
               
 
@@ -496,10 +496,19 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cat xxxx.pub</span><br></pre></td></tr></table></figure>
 <h2 id="GitLab-来管理git"><a href="#GitLab-来管理git" class="headerlink" title="GitLab 来管理git"></a>GitLab 来管理git</h2><hr>
 <p>登录 <strong>GitLab</strong>，点击 <strong>Settings</strong>，左侧边栏 点击 <strong>SSH Keys</strong> 用户SSH密匙设置，把刚才创建的 <strong>公匙</strong> 粘贴到 <strong>KEY</strong> 一栏，<strong>Title</strong> 只是显示作用，默认就好，最后点 <strong>Add Key</strong></p>
+<p>公司的仓库地址 <strong>SSH</strong> ：格式是：协议类型:[//服务器地址[:端口号]][/资源层级UNIX文件路径]文件名[?查询][#片段ID]</p>
+<p>例如： ssh:<a href="mailto://git@git.9xxxxxx.com" target="_blank" rel="noopener">//git@git.9xxxxxx.com</a>:22xxxx/frontend/xxxxxxxxx.git</p>
+<ul>
+<li>ssh 是协议，你可以类比为 http 或 https</li>
+<li><a href="mailto:git@git.xxxxxxx.com" target="_blank" rel="noopener">git@git.xxxxxxx.com</a>  这个是服务器地址</li>
+<li>22xxxx 是端口</li>
+</ul>
 <p>回到终端</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">vim ~<span class="regexp">/.ssh/</span>config</span><br></pre></td></tr></table></figure>
 <p>按 <code>i</code> (英文输入法) 编辑：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"># 公司名</span><br><span class="line">Host 账号</span><br><span class="line">Port 端口</span><br><span class="line">User 用户名</span><br><span class="line">IdentityFile ~<span class="regexp">/.ssh/</span>公司名</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"># 公司名</span><br><span class="line">Host 服务器地址</span><br><span class="line">Port 端口</span><br><span class="line">User 用户名</span><br><span class="line">IdentityFile ~<span class="regexp">/.ssh/</span>公司名</span><br></pre></td></tr></table></figure>
+<p>Host 就是服务器地址<br>Port 就是端口<br>User 就是你在Gitlab上的用户名<br>IdentityFile 是认证文件，对应的是你的私钥</p>
+<p>你电脑本地保存的是 <strong>私钥</strong>，服务器上保存的是<strong>公钥</strong>，这两个秘钥不相同，通过 RSA 算法不对称加密，来验证你是不是本人</p>
 <p>编辑好，按 <code>Esc</code> 退出编辑模式，最后输入 <code>:wq</code>，保存并退出。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>vim</code> 是一个终端编辑器，可以看做是 VSCode，按 <code>i</code> 进入编辑模式，按 <code>Esc</code> 退出编辑模式，<code>:w</code> 是保存，<code>:q</code> 是退出， <code>:wq</code> 是保存并退出</p>
 
@@ -801,7 +810,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">31.5k</span>
+    <span title="Site words total count">31.7k</span>
   
 </div>
 

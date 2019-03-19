@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[git管理 --- 常用Linux命令]]></title>
     <url>%2F2019%2F03%2F18%2Fgit%E7%AE%A1%E7%90%86%2F</url>
-    <content type="text"><![CDATA[查看本机git公匙和私匙 打开终端，先进入 ssh 配置目录 cd ~/.ssh/ 查看文件目录 ls 查看公匙 cat id_rsa.pub 或者查看私匙 cat id_rsa 建立公司专有公匙私匙 ssh-keygen -t rsa -P "" 按提示输入公司名 再打开ssh 配置目录，可以看到配置成功 cd ~/.ssh/ 查看文件目录 ls 查看配置的公司公匙 cat xxxx.pub GitLab 来管理git 登录 GitLab，点击 Settings，左侧边栏 点击 SSH Keys 用户SSH密匙设置，把刚才创建的 公匙 粘贴到 KEY 一栏，Title 只是显示作用，默认就好，最后点 Add Key 回到终端 vim ~/.ssh/config 按 i (英文输入法) 编辑： # 公司名Host 账号Port 端口User 用户名IdentityFile ~/.ssh/公司名 编辑好，按 Esc 退出编辑模式，最后输入 :wq，保存并退出。 小结vim 是一个终端编辑器，可以看做是 VSCode，按 i 进入编辑模式，按 Esc 退出编辑模式，:w 是保存，:q 是退出， :wq 是保存并退出]]></content>
+    <content type="text"><![CDATA[查看本机git公匙和私匙 打开终端，先进入 ssh 配置目录 cd ~/.ssh/ 查看文件目录 ls 查看公匙 cat id_rsa.pub 或者查看私匙 cat id_rsa 建立公司专有公匙私匙 ssh-keygen -t rsa -P "" 按提示输入公司名 再打开ssh 配置目录，可以看到配置成功 cd ~/.ssh/ 查看文件目录 ls 查看配置的公司公匙 cat xxxx.pub GitLab 来管理git 登录 GitLab，点击 Settings，左侧边栏 点击 SSH Keys 用户SSH密匙设置，把刚才创建的 公匙 粘贴到 KEY 一栏，Title 只是显示作用，默认就好，最后点 Add Key 公司的仓库地址 SSH ：格式是：协议类型:[//服务器地址[:端口号]][/资源层级UNIX文件路径]文件名[?查询][#片段ID] 例如： ssh://git@git.9xxxxxx.com:22xxxx/frontend/xxxxxxxxx.git ssh 是协议，你可以类比为 http 或 https git@git.xxxxxxx.com 这个是服务器地址 22xxxx 是端口 回到终端 vim ~/.ssh/config 按 i (英文输入法) 编辑： # 公司名Host 服务器地址Port 端口User 用户名IdentityFile ~/.ssh/公司名 Host 就是服务器地址Port 就是端口User 就是你在Gitlab上的用户名IdentityFile 是认证文件，对应的是你的私钥 你电脑本地保存的是 私钥，服务器上保存的是公钥，这两个秘钥不相同，通过 RSA 算法不对称加密，来验证你是不是本人 编辑好，按 Esc 退出编辑模式，最后输入 :wq，保存并退出。 小结vim 是一个终端编辑器，可以看做是 VSCode，按 i 进入编辑模式，按 Esc 退出编辑模式，:w 是保存，:q 是退出， :wq 是保存并退出]]></content>
       <categories>
         <category>git</category>
       </categories>
